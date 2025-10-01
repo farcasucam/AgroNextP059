@@ -99,7 +99,7 @@ try:
     with hcol1:
         st.image("img/logo.png", width=140)
     with hcol3:
-        st.image("img/ucam.png", width=280)
+        st.image("img/ucam.png", width=320)
     with hcol2:
         st.markdown("<h1 style='text-align:center;margin-top:18px;'>Sistema de alertas y prospección mediante redes sociales</h1>", unsafe_allow_html=True)
 except Exception:
@@ -374,6 +374,6 @@ try:
     with fcol1:
         st.image("img/murcia.png", width=200)
     with fcol2:
-        st.image("img/logos-gob.jpg", width=450)
+        st.image("img/logos-gob.jpg", width=500)
 except Exception:
     st.markdown("Logos de pie no disponibles (falta la carpeta `img/` o las imágenes).")
