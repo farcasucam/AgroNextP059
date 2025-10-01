@@ -99,7 +99,7 @@ try:
     with hcol1:
         st.image("img/logo.png", width=140)
     with hcol3:
-        st.image("img/ucam.png", width=340)
+        st.image("img/ucam.png", width=440)
     with hcol2:
         st.markdown("<h1 style='text-align:center;margin-top:18px;'>Sistema de alertas y prospección mediante redes sociales</h1>", unsafe_allow_html=True)
 except Exception:
