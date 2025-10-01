@@ -78,7 +78,6 @@ df_noticias = flatten_noticias(noticias_raw)
 df_zonas = flatten_zonas(zonas_raw)
 
 # ==== Sidebar filtros ====
-# Productos y variedades
 productos_variedades = {}
 for _, row in df_noticias.iterrows():
     prod = row.get("entidades.producto")
@@ -122,7 +121,6 @@ if producto_sel != "Todos":
 if variedad_sel != "Todas":
     df_filtrado = df_filtrado[df_filtrado["variedades_list"].apply(lambda L: variedad_sel in L)]
 
-# Filtro por mes en noticias
 df_filtrado["fecha_parsed"] = pd.to_datetime(df_filtrado["fecha_noticia"], errors="coerce")
 df_filtrado = df_filtrado[df_filtrado["fecha_parsed"].dt.month.between(mes_desde, mes_hasta, inclusive="both")]
 
@@ -133,7 +131,6 @@ if producto_sel != "Todos":
 if variedad_sel != "Todas":
     df_zonas_filtrado = df_zonas_filtrado[df_zonas_filtrado["entidades.variedad"].fillna("").str.contains(variedad_sel)]
 
-# Filtro por periodo de producción y meses seleccionados
 df_zonas_filtrado = df_zonas_filtrado[
     (df_zonas_filtrado["periodo_inicio"] <= mes_hasta) &
     (df_zonas_filtrado["periodo_fin"] >= mes_desde)
@@ -145,10 +142,8 @@ st.title("📊 Cuadro de mandos agrícola — noticias y zonas de producción")
 # ---- Noticias en tabla con color por sentimiento ----
 if not df_filtrado.empty:
     st.subheader("📰 Noticias filtradas")
-
     cols_to_show = ["fecha_noticia", "fuente", "titulo", "entidades.pais", "entidades.region",
                     "entidades.producto", "entidades.variedad", "graduacion_sentimiento"]
-
     df_show = df_filtrado[cols_to_show].copy().fillna("")
 
     def sentiment_color(val):
@@ -172,72 +167,79 @@ if not df_filtrado.empty:
 else:
     st.info("No hay noticias para la selección actual.")
 
-# ---- Nube de palabras ----
+# ---- Nube de palabras única ----
 if not df_filtrado.empty:
-    st.subheader("☁️ Nubes de palabras")
+    st.subheader("☁️ Nube de palabras (palabras clave + actores)")
     palabras = []
-    actores = []
     for _, row in df_filtrado.iterrows():
         if isinstance(row["palabras_clave"], list):
             palabras.extend(row["palabras_clave"])
         if isinstance(row["actores"], list):
-            actores.extend(row["actores"])
+            palabras.extend(row["actores"])
 
-    col1, col2 = st.columns(2)
     if palabras:
-        wc = WordCloud(width=400, height=300, background_color="white").generate(" ".join(palabras))
-        fig, ax = plt.subplots(figsize=(5,4))
+        wc = WordCloud(width=800, height=400, background_color="white", colormap="viridis").generate(" ".join(palabras))
+        fig, ax = plt.subplots(figsize=(8,4))
         ax.imshow(wc, interpolation="bilinear")
         ax.axis("off")
-        col1.pyplot(fig)
-    if actores:
-        wc2 = WordCloud(width=400, height=300, background_color="white", colormap="plasma").generate(" ".join(actores))
-        fig2, ax2 = plt.subplots(figsize=(5,4))
-        ax2.imshow(wc2, interpolation="bilinear")
-        ax2.axis("off")
-        col2.pyplot(fig2)
+        st.pyplot(fig)
 
 # ---- Mapa ----
 st.subheader("🗺️ Zonas de producción y noticias")
 
 map_layers = []
+all_points = []
 
-# Zonas de producción (círculos escalados por volumen)
+# Zonas (círculos verdes)
 if not df_zonas_filtrado.empty:
     df_zonas_filtrado = df_zonas_filtrado.dropna(subset=["lat", "lon", "volumen_estimado_tn"])
     if not df_zonas_filtrado.empty:
+        max_vol = df_zonas_filtrado["volumen_estimado_tn"].max() or 1
+        df_zonas_filtrado["radius_scaled"] = df_zonas_filtrado["volumen_estimado_tn"] / max_vol * 200000
         zonas_layer = pdk.Layer(
             "ScatterplotLayer",
             data=df_zonas_filtrado,
             get_position=["lon","lat"],
-            get_radius="volumen_estimado_tn",
-            radius_scale=1,
-            get_fill_color=[0, 128, 0, 140],
+            get_radius="radius_scaled",
+            get_fill_color=[0, 128, 0, 160],
             pickable=True,
         )
         map_layers.append(zonas_layer)
+        all_points.extend(df_zonas_filtrado[["lat","lon"]].values.tolist())
 
-# Noticias (puntos rojos)
+# Noticias (círculos rojos)
 if not df_filtrado.empty:
     df_news_map = df_filtrado.dropna(subset=["lat", "lon"])
     if not df_news_map.empty:
+        df_news_map["radius_scaled"] = 60000
         news_layer = pdk.Layer(
             "ScatterplotLayer",
             data=df_news_map,
             get_position=["lon","lat"],
-            get_radius=50000,
+            get_radius="radius_scaled",
             get_fill_color=[200, 0, 0, 160],
             pickable=True,
         )
         map_layers.append(news_layer)
+        all_points.extend(df_news_map[["lat","lon"]].values.tolist())
 
-if map_layers:
-    view_state = pdk.ViewState(latitude=20, longitude=0, zoom=1.5)
-    st.pydeck_chart(pdk.Deck(layers=map_layers, initial_view_state=view_state))
+# Calcular centro del mapa y zoom dinámico
+if all_points:
+    lats, lons = zip(*all_points)
+    center_lat = sum(lats)/len(lats)
+    center_lon = sum(lons)/len(lons)
+    view_state = pdk.ViewState(latitude=center_lat, longitude=center_lon, zoom=2.5)
+
+    tooltip = {
+        "html": "<b>{region}, {pais}</b><br/>Producto: {entidades.producto}<br/>Variedad: {entidades.variedad}<br/>Volumen: {volumen_estimado_tn} tn<br/><b>{titulo}</b><br/>{fuente} - {fecha_noticia}",
+        "style": {"backgroundColor": "white", "color": "black"}
+    }
+
+    st.pydeck_chart(pdk.Deck(layers=map_layers, initial_view_state=view_state, map_style="light", tooltip=tooltip))
 else:
     st.info("No hay datos geográficos para mostrar.")
 
-# ---- Footer con logos ----
+# ---- Footer con logo ----
 st.markdown("---")
 st.markdown(
     """
