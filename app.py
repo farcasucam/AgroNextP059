@@ -211,6 +211,13 @@ else:
 
 # ------------------ Nube de palabras única ------------------
 st.markdown("### ☁️ Nube de palabras (palabras clave + actores)")
+spanish_stopwords = {
+    "de", "la", "el", "los", "las", "un", "una", "unos", "unas",
+    "y", "o", "u", "en", "con", "para", "por", "se", "al", "del",
+    "que", "como", "su", "sus", "es", "son", "fue", "ser"
+}
+
+all_stopwords = STOPWORDS.union(spanish_stopwords)
 if not df_filtrado.empty:
     palabras = []
     for _, row in df_filtrado.iterrows():
@@ -221,7 +228,7 @@ if not df_filtrado.empty:
         if isinstance(ac, (list, tuple)):
             palabras.extend([str(x) for x in ac if x])
     if palabras:
-        wc = WordCloud(width=1000, height=380, background_color="white", colormap="viridis", stopwords=STOPWORDS).generate(" ".join(palabras))
+        wc = WordCloud(width=1000, height=380, background_color="white", colormap="viridis", stopwords=all_stopwords).generate(" ".join(palabras))
         fig, ax = plt.subplots(figsize=(10,4))
         ax.imshow(wc, interpolation="bilinear")
         ax.axis("off")
