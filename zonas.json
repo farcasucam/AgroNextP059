@@ -1,0 +1,450 @@
+[
+  {
+    "id": "prod_001",
+    "fuente": "FAO / AICA",
+    "titulo": "Producción mundial de olivar",
+    "entidades": {
+      "producto": "Olivar",
+      "variedad": "Picual / Manzanilla / Koroneiki",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Andalucía (Jaén, Córdoba, Sevilla)",
+          "coordenadas": { "lat": 37.9859, "lon": -3.8235 },
+          "periodo_produccion": { "inicio_mes": 10, "fin_mes": 1 },
+          "volumen_estimado_tn": 1300000
+        },
+        {
+          "pais": "Grecia",
+          "region": "Peloponeso (Koroneiki)",
+          "coordenadas": { "lat": 37.0380, "lon": 22.1140 },
+          "periodo_produccion": { "inicio_mes": 11, "fin_mes": 2 },
+          "volumen_estimado_tn": 280000
+        },
+        {
+          "pais": "Italia",
+          "region": "Apulia / Calabria",
+          "coordenadas": { "lat": 40.6333, "lon": 17.9389 },
+          "periodo_produccion": { "inicio_mes": 11, "fin_mes": 2 },
+          "volumen_estimado_tn": 500000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_002",
+    "fuente": "FAO / Eurostat",
+    "titulo": "Producción mundial de naranja",
+    "entidades": {
+      "producto": "Naranja",
+      "variedad": "Navelina / Valencia",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Comunidad Valenciana / Murcia",
+          "coordenadas": { "lat": 39.4702, "lon": -0.3768 },
+          "periodo_produccion": { "inicio_mes": 10, "fin_mes": 6 },
+          "volumen_estimado_tn": 3300000
+        },
+        {
+          "pais": "Marruecos",
+          "region": "Agadir",
+          "coordenadas": { "lat": 30.4278, "lon": -9.5981 },
+          "periodo_produccion": { "inicio_mes": 11, "fin_mes": 4 },
+          "volumen_estimado_tn": 1200000
+        },
+        {
+          "pais": "Sudáfrica",
+          "region": "Provincia Limpopo",
+          "coordenadas": { "lat": -23.401, "lon": 29.417 },
+          "periodo_produccion": { "inicio_mes": 5, "fin_mes": 9 },
+          "volumen_estimado_tn": 1700000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_003",
+    "fuente": "FAO",
+    "titulo": "Producción mundial de arroz",
+    "entidades": {
+      "producto": "Arroz",
+      "variedad": "Arborio / Indica / Japónica",
+      "zonas_produccion": [
+        {
+          "pais": "Tailandia",
+          "region": "Delta del Chao Phraya",
+          "coordenadas": { "lat": 14.3556, "lon": 100.567 },
+          "periodo_produccion": { "inicio_mes": 5, "fin_mes": 10 },
+          "volumen_estimado_tn": 21000000
+        },
+        {
+          "pais": "Vietnam",
+          "region": "Delta del Mekong",
+          "coordenadas": { "lat": 10.033, "lon": 105.783 },
+          "periodo_produccion": { "inicio_mes": 4, "fin_mes": 9 },
+          "volumen_estimado_tn": 27000000
+        },
+        {
+          "pais": "España",
+          "region": "Valencia / Delta del Ebro",
+          "coordenadas": { "lat": 39.0, "lon": -0.4 },
+          "periodo_produccion": { "inicio_mes": 5, "fin_mes": 9 },
+          "volumen_estimado_tn": 750000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_004",
+    "fuente": "FAO / USDA",
+    "titulo": "Producción mundial de trigo y cebada",
+    "entidades": {
+      "producto": "Cereal",
+      "variedad": "Trigo duro / Trigo blando / Cebada cervecera",
+      "zonas_produccion": [
+        {
+          "pais": "Kazajistán",
+          "region": "Asia Central",
+          "coordenadas": { "lat": 48.0196, "lon": 66.9237 },
+          "periodo_produccion": { "inicio_mes": 6, "fin_mes": 9 },
+          "volumen_estimado_tn": 14000000
+        },
+        {
+          "pais": "España",
+          "region": "Castilla y León / Castilla-La Mancha",
+          "coordenadas": { "lat": 41.6528, "lon": -4.7286 },
+          "periodo_produccion": { "inicio_mes": 6, "fin_mes": 8 },
+          "volumen_estimado_tn": 6000000
+        },
+        {
+          "pais": "Marruecos",
+          "region": "Magreb",
+          "coordenadas": { "lat": 31.7917, "lon": -7.0926 },
+          "periodo_produccion": { "inicio_mes": 5, "fin_mes": 7 },
+          "volumen_estimado_tn": 7000000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_005",
+    "fuente": "FAO / FreshPlaza",
+    "titulo": "Producción mundial de plátano / banana",
+    "entidades": {
+      "producto": "Plátano / Banana",
+      "variedad": "Cavendish",
+      "zonas_produccion": [
+        {
+          "pais": "Ecuador",
+          "region": "Guayas",
+          "coordenadas": { "lat": -1.8312, "lon": -78.1834 },
+          "periodo_produccion": { "inicio_mes": 1, "fin_mes": 12 },
+          "volumen_estimado_tn": 6800000
+        },
+        {
+          "pais": "Colombia",
+          "region": "Urabá / Magdalena",
+          "coordenadas": { "lat": 7.884, "lon": -76.634 },
+          "periodo_produccion": { "inicio_mes": 1, "fin_mes": 12 },
+          "volumen_estimado_tn": 5000000
+        },
+        {
+          "pais": "España",
+          "region": "Islas Canarias",
+          "coordenadas": { "lat": 28.2916, "lon": -16.6291 },
+          "periodo_produccion": { "inicio_mes": 2, "fin_mes": 11 },
+          "volumen_estimado_tn": 400000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_006",
+    "fuente": "FreshPlaza / Hortoinfo",
+    "titulo": "Producción mundial de fresa",
+    "entidades": {
+      "producto": "Fresa",
+      "variedad": "Albion / Chandler",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Huelva",
+          "coordenadas": { "lat": 37.2614, "lon": -6.9447 },
+          "periodo_produccion": { "inicio_mes": 1, "fin_mes": 5 },
+          "volumen_estimado_tn": 350000
+        },
+        {
+          "pais": "Estados Unidos",
+          "region": "California",
+          "coordenadas": { "lat": 36.7783, "lon": -119.4179 },
+          "periodo_produccion": { "inicio_mes": 3, "fin_mes": 11 },
+          "volumen_estimado_tn": 1000000
+        },
+        {
+          "pais": "México",
+          "region": "Michoacán",
+          "coordenadas": { "lat": 19.5667, "lon": -101.7167 },
+          "periodo_produccion": { "inicio_mes": 11, "fin_mes": 3 },
+          "volumen_estimado_tn": 700000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_007",
+    "fuente": "FAO / FreshPlaza",
+    "titulo": "Producción mundial de uva de mesa",
+    "entidades": {
+      "producto": "Uva de mesa",
+      "variedad": "Thompson Seedless / Superior",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Murcia",
+          "coordenadas": { "lat": 37.9922, "lon": -1.1307 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 10 },
+          "volumen_estimado_tn": 300000
+        },
+        {
+          "pais": "Chile",
+          "region": "Valle de Aconcagua / Copiapó",
+          "coordenadas": { "lat": -27.3667, "lon": -70.3333 },
+          "periodo_produccion": { "inicio_mes": 12, "fin_mes": 4 },
+          "volumen_estimado_tn": 700000
+        },
+        {
+          "pais": "Sudáfrica",
+          "region": "Western Cape",
+          "coordenadas": { "lat": -33.9249, "lon": 18.4241 },
+          "periodo_produccion": { "inicio_mes": 1, "fin_mes": 4 },
+          "volumen_estimado_tn": 350000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_008",
+    "fuente": "FAO / USDA",
+    "titulo": "Producción mundial de manzana",
+    "entidades": {
+      "producto": "Manzana",
+      "variedad": "Golden / Gala",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Cataluña / Aragón",
+          "coordenadas": { "lat": 41.3879, "lon": 2.1699 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 11 },
+          "volumen_estimado_tn": 550000
+        },
+        {
+          "pais": "Polonia",
+          "region": "Mazovia",
+          "coordenadas": { "lat": 52.2297, "lon": 21.0122 },
+          "periodo_produccion": { "inicio_mes": 9, "fin_mes": 11 },
+          "volumen_estimado_tn": 3000000
+        },
+        {
+          "pais": "China",
+          "region": "Shandong / Shaanxi",
+          "coordenadas": { "lat": 35.5, "lon": 116.5 },
+          "periodo_produccion": { "inicio_mes": 9, "fin_mes": 11 },
+          "volumen_estimado_tn": 45000000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_009",
+    "fuente": "FAO / Eurostat",
+    "titulo": "Producción mundial de pera",
+    "entidades": {
+      "producto": "Pera",
+      "variedad": "Conference / Abate Fetel",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Lleida / Aragón",
+          "coordenadas": { "lat": 41.6167, "lon": 0.6333 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 10 },
+          "volumen_estimado_tn": 300000
+        },
+        {
+          "pais": "Italia",
+          "region": "Emilia-Romaña",
+          "coordenadas": { "lat": 44.4949, "lon": 11.3426 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 10 },
+          "volumen_estimado_tn": 700000
+        },
+        {
+          "pais": "China",
+          "region": "Hebei",
+          "coordenadas": { "lat": 38.0, "lon": 115.0 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 10 },
+          "volumen_estimado_tn": 18000000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_010",
+    "fuente": "FAO / MAPA",
+    "titulo": "Producción mundial de almendra",
+    "entidades": {
+      "producto": "Almendra",
+      "variedad": "Común / Marcona",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Andalucía / Murcia",
+          "coordenadas": { "lat": 37.0, "lon": -4.5 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 9 },
+          "volumen_estimado_tn": 360000
+        },
+        {
+          "pais": "Estados Unidos",
+          "region": "California",
+          "coordenadas": { "lat": 36.7783, "lon": -119.4179 },
+          "periodo_produccion": { "inicio_mes": 8, "fin_mes": 10 },
+          "volumen_estimado_tn": 1300000
+        },
+        {
+          "pais": "Australia",
+          "region": "Victoria / Nueva Gales del Sur",
+          "coordenadas": { "lat": -35.0, "lon": 145.0 },
+          "periodo_produccion": { "inicio_mes": 2, "fin_mes": 4 },
+          "volumen_estimado_tn": 125000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_011",
+    "fuente": "FreshPlaza / FAO",
+    "titulo": "Producción mundial de aguacate Hass",
+    "entidades": {
+      "producto": "Aguacate",
+      "variedad": "Hass",
+      "zonas_produccion": [
+        {
+          "pais": "México",
+          "region": "Michoacán",
+          "coordenadas": { "lat": 19.5667, "lon": -101.7167 },
+          "periodo_produccion": { "inicio_mes": 7, "fin_mes": 6 },
+          "volumen_estimado_tn": 2400000
+        },
+        {
+          "pais": "España",
+          "region": "Costa de Málaga y Granada",
+          "coordenadas": { "lat": 36.7213, "lon": -4.4214 },
+          "periodo_produccion": { "inicio_mes": 11, "fin_mes": 4 },
+          "volumen_estimado_tn": 80000
+        },
+        {
+          "pais": "Perú",
+          "region": "Lambayeque / La Libertad",
+          "coordenadas": { "lat": -8.11599, "lon": -79.02998 },
+          "periodo_produccion": { "inicio_mes": 4, "fin_mes": 9 },
+          "volumen_estimado_tn": 650000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_012",
+    "fuente": "FAO / INE",
+    "titulo": "Producción mundial de pimiento",
+    "entidades": {
+      "producto": "Pimiento",
+      "variedad": "California Wonder / Lamuyo",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Almería (invernaderos)",
+          "coordenadas": { "lat": 36.8340, "lon": -2.4637 },
+          "periodo_produccion": { "inicio_mes": 9, "fin_mes": 6 },
+          "volumen_estimado_tn": 1200000
+        },
+        {
+          "pais": "Países Bajos",
+          "region": "Limburgo",
+          "coordenadas": { "lat": 51.0, "lon": 5.9 },
+          "periodo_produccion": { "inicio_mes": 3, "fin_mes": 11 },
+          "volumen_estimado_tn": 450000
+        },
+        {
+          "pais": "México",
+          "region": "Sinaloa",
+          "coordenadas": { "lat": 25.1721, "lon": -107.4795 },
+          "periodo_produccion": { "inicio_mes": 11, "fin_mes": 5 },
+          "volumen_estimado_tn": 1500000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_013",
+    "fuente": "FAO / Hortoinfo",
+    "titulo": "Producción mundial de pepino",
+    "entidades": {
+      "producto": "Pepino",
+      "variedad": "California Wonder / Pepino europeo",
+      "zonas_produccion": [
+        {
+          "pais": "España",
+          "region": "Almería",
+          "coordenadas": { "lat": 36.8340, "lon": -2.4637 },
+          "periodo_produccion": { "inicio_mes": 10, "fin_mes": 5 },
+          "volumen_estimado_tn": 700000
+        },
+        {
+          "pais": "Países Bajos",
+          "region": "Greenhouses",
+          "coordenadas": { "lat": 52.1326, "lon": 5.2913 },
+          "periodo_produccion": { "inicio_mes": 3, "fin_mes": 11 },
+          "volumen_estimado_tn": 500000
+        },
+        {
+          "pais": "China",
+          "region": "Shandong",
+          "coordenadas": { "lat": 36.0, "lon": 118.0 },
+          "periodo_produccion": { "inicio_mes": 5, "fin_mes": 10 },
+          "volumen_estimado_tn": 5000000
+        }
+      ]
+    }
+  },
+  {
+    "id": "prod_014",
+    "fuente": "FAO / Italia Agricola",
+    "titulo": "Producción mundial de tomate",
+    "entidades": {
+      "producto": "Tomate",
+      "variedad": "San Marzano / Cherry / Raf",
+      "zonas_produccion": [
+        {
+          "pais": "Italia",
+          "region": "Campania / Emilia-Romaña",
+          "coordenadas": { "lat": 41.0, "lon": 14.5 },
+          "periodo_produccion": { "inicio_mes": 7, "fin_mes": 9 },
+          "volumen_estimado_tn": 5600000
+        },
+        {
+          "pais": "España",
+          "region": "Almería (invernaderos)",
+          "coordenadas": { "lat": 36.8340, "lon": -2.4637 },
+          "periodo_produccion": { "inicio_mes": 10, "fin_mes": 6 },
+          "volumen_estimado_tn": 1050000
+        },
+        {
+          "pais": "Países Bajos",
+          "region": "Invernaderos",
+          "coordenadas": { "lat": 52.1326, "lon": 5.2913 },
+          "periodo_produccion": { "inicio_mes": 1, "fin_mes": 12 },
+          "volumen_estimado_tn": 900000
+        }
+      ]
+    }
+  }
+]

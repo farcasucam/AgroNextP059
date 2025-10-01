@@ -1,0 +1,2087 @@
+[
+    {
+        "id": "news_001",
+        "fecha_recogida": "2025-09-28",
+        "fecha_noticia": "2025-09-27",
+        "fuente": "freshplaza.es",
+        "url": "https://freshplaza.es/sequia-olivar-andalucia-2025",
+        "titulo": "Sequía prolongada reduce rendimientos en olivar andaluz",
+        "resumen": "Varios municipios de Jaén y Córdoba registran precipitaciones muy por debajo de la media, afectando a la floración.",
+        "categoria": "Climatologia",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.9859,
+                "lon": -3.8235
+            },
+            "producto": "Olivar",
+            "variedad": "Picual"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -4,
+        "palabras_clave": [
+            "sequía",
+            "olivar",
+            "Picual",
+            "agua"
+        ],
+        "actores": [
+            "Consejería de Agricultura Andalucía",
+            "Cooperativas locales"
+        ],
+        "datos_produccion": {
+            "superficie_afectada_ha": 95000,
+            "perdida_estimacion_pct": 35
+        }
+    },
+    {
+        "id": "news_002",
+        "fecha_recogida": "2025-09-29",
+        "fecha_noticia": "2025-09-28",
+        "fuente": "freshplaza.com",
+        "url": "https://freshplaza.com/italia-export-tomate-alemania-2025",
+        "titulo": "Exportaciones italianas de tomate aumentan hacia Alemania",
+        "resumen": "Crecimiento trimestral del 12% en exportaciones que presiona precios en la UE.",
+        "categoria": "Comercio_Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Italia",
+            "region": "Emilia-Romaña",
+            "coordenadas": {
+                "lat": 44.4949,
+                "lon": 11.3426
+            },
+            "producto": "Tomate",
+            "variedad": "San Marzano"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "exportación",
+            "tomate",
+            "San Marzano"
+        ],
+        "actores": [
+            "Asociación Exportadores Italia"
+        ],
+        "condiciones_mercado": {
+            "precio_medio_eur_kg": 1.78,
+            "demanda": "Alta"
+        }
+    },
+    {
+        "id": "news_003",
+        "fecha_recogida": "2025-09-25",
+        "fecha_noticia": "2025-09-24",
+        "fuente": "campodigital.es",
+        "url": "https://campodigital.es/iot-viñedo-castilla-la-mancha",
+        "titulo": "Sensores IoT reducen 15% consumo de agua en viñedos ecológicos",
+        "resumen": "Cooperativa implanta sensores que optimizan riego y aumentan rendimientos en Tempranillo.",
+        "categoria": "Tecnologia_Agricola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Castilla-La Mancha",
+            "coordenadas": {
+                "lat": 39.8628,
+                "lon": -4.0273
+            },
+            "producto": "Viñedo",
+            "variedad": "Tempranillo"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 4,
+        "palabras_clave": [
+            "IoT",
+            "riego",
+            "Tempranillo"
+        ],
+        "actores": [
+            "Cooperativa La Mancha",
+            "Startup AgroTech"
+        ],
+        "datos_produccion": {
+            "superficie_cubierta_ha": 1800,
+            "rendimiento_incremento_pct": 8
+        }
+    },
+    {
+        "id": "news_004",
+        "fecha_recogida": "2025-09-23",
+        "fecha_noticia": "2025-09-22",
+        "fuente": "elpais.com",
+        "url": "https://elpais.com/politica/aranceles-citricos-eu",
+        "titulo": "La UE estudia medidas ante importaciones masivas de cítricos",
+        "resumen": "Productores europeos piden protección por la entrada masiva de cítricos sudafricanos que baja precios.",
+        "categoria": "Politica_Comercial",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Unión Europea",
+            "region": "Bruselas",
+            "coordenadas": {
+                "lat": 50.8503,
+                "lon": 4.3517
+            },
+            "producto": "Cítricos",
+            "variedad": "Navelina"
+        },
+        "impacto_produccion": "Indeterminado",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "aranceles",
+            "cítricos",
+            "exportaciones"
+        ],
+        "actores": [
+            "Comisión Europea",
+            "Organizaciones de productores"
+        ]
+    },
+    {
+        "id": "news_005",
+        "fecha_recogida": "2025-09-26",
+        "fecha_noticia": "2025-09-25",
+        "fuente": "fao.org",
+        "url": "https://fao.org/locusts-cca/alerta-2025",
+        "titulo": "Brote de langosta amenaza trigo en Asia Central",
+        "resumen": "FAO registra riesgo para 1,5M ha de trigo en Kazajistán y Uzbekistán por focos de langosta.",
+        "categoria": "Crisis_Fitosanitaria",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Kazajistán",
+            "region": "Asia Central",
+            "coordenadas": {
+                "lat": 48.0196,
+                "lon": 66.9237
+            },
+            "producto": "Trigo",
+            "variedad": "Trigo duro"
+        },
+        "impacto_produccion": "Muy alto",
+        "graduacion_sentimiento": -5,
+        "palabras_clave": [
+            "langosta",
+            "plaga",
+            "trigo"
+        ],
+        "actores": [
+            "FAO",
+            "Ministerio Agricultura Kazajistán"
+        ],
+        "datos_produccion": {
+            "superficie_afectada_ha": 1500000
+        }
+    },
+    {
+        "id": "news_006",
+        "fecha_recogida": "2025-09-21",
+        "fecha_noticia": "2025-09-20",
+        "fuente": "agroinformacion.com",
+        "url": "https://agroinformacion.com/precios-cereales-septiembre-2025",
+        "titulo": "Precios del cereal inestables por demanda y clima",
+        "resumen": "Variaciones en los precios del cereal afectan costes de la industria y márgenes de agricultores.",
+        "categoria": "Mercado_Precios",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Castilla y León",
+            "coordenadas": {
+                "lat": 41.6528,
+                "lon": -4.7286
+            },
+            "producto": "Cereal",
+            "variedad": "Trigo blando"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "precio",
+            "cereal",
+            "mercado"
+        ],
+        "actores": [
+            "Cooperativas cerealistas"
+        ],
+        "condiciones_mercado": {
+            "precio_medio_eur_tn": 210,
+            "variacion_mensual_pct": 6
+        }
+    },
+    {
+        "id": "news_007",
+        "fecha_recogida": "2025-09-19",
+        "fecha_noticia": "2025-09-18",
+        "fuente": "freshplaza.es",
+        "url": "https://freshplaza.es/aguacate-hass-mexico-mercado-europa",
+        "titulo": "Aumento de oferta de aguacate Hass desde México presiona precios europeos",
+        "resumen": "Campaña mexicana amplia volúmenes y reduce precios spot en Europa.",
+        "categoria": "Comercio_Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "México",
+            "region": "Michoacán",
+            "coordenadas": {
+                "lat": 19.5667,
+                "lon": -101.7167
+            },
+            "producto": "Aguacate",
+            "variedad": "Hass"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "aguacate",
+            "Hass",
+            "exportación"
+        ],
+        "actores": [
+            "Exportadores mexicanos",
+            "Distribuidores europeos"
+        ],
+        "condiciones_mercado": {
+            "precio_medio_eur_kg": 2.25
+        }
+    },
+    {
+        "id": "news_008",
+        "fecha_recogida": "2025-09-18",
+        "fecha_noticia": "2025-09-17",
+        "fuente": "campodigital.es",
+        "url": "https://campodigital.es/politicas-agua-regiones-secas",
+        "titulo": "Nuevas medidas regionales para gestión del agua en zonas áridas",
+        "resumen": "Las comunidades autónomas adaptan planes de riego por restricciones hidráulicas.",
+        "categoria": "Regulacion",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Regiones áridas (varias)",
+            "coordenadas": {
+                "lat": 39.0,
+                "lon": -2.0
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "agua",
+            "regulación",
+            "riego"
+        ],
+        "actores": [
+            "Gobiernos autonómicos",
+            "MAPA"
+        ]
+    },
+    {
+        "id": "news_009",
+        "fecha_recogida": "2025-09-16",
+        "fecha_noticia": "2025-09-15",
+        "fuente": "elpais.com",
+        "url": "https://elpais.com/economia/ayudas-agricultura-2025",
+        "titulo": "El Gobierno aprueba paquete de ayudas a agricultores afectados por DANA",
+        "resumen": "Medidas económicas para compensar daños y modernizar infraestructuras agrarias.",
+        "categoria": "Ayudas_Subvenciones",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.4168,
+                "lon": -3.7038
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "subvenciones",
+            "ayudas",
+            "DANA"
+        ],
+        "actores": [
+            "Gobierno de España",
+            "Ministerio de Agricultura"
+        ],
+        "condiciones_mercado": {
+            "monto_eur": 4680000
+        }
+    },
+    {
+        "id": "news_010",
+        "fecha_recogida": "2025-09-14",
+        "fecha_noticia": "2025-09-13",
+        "fuente": "freshplaza.com",
+        "url": "https://freshplaza.com/produccion-fresa-huelva-2025",
+        "titulo": "Campaña de fresa en Huelva comienza con tamaños y precios mejores",
+        "resumen": "Mejora en calibre y logística ha permitido mejores precios para las fresas de la provincia.",
+        "categoria": "Mercado_Precios",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.2614,
+                "lon": -6.9447
+            },
+            "producto": "Fresa",
+            "variedad": "Albion"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "fresa",
+            "Huelva",
+            "Albion"
+        ],
+        "actores": [
+            "Productores Huelva",
+            "Exportadores"
+        ],
+        "condiciones_mercado": {
+            "precio_medio_eur_kg": 2.90
+        }
+    },
+    {
+        "id": "news_011",
+        "fecha_recogida": "2025-09-12",
+        "fecha_noticia": "2025-09-11",
+        "fuente": "agroinformacion.com",
+        "url": "https://agroinformacion.com/cepas-tempranillo-investigacion",
+        "titulo": "Investigación genómica mejora resistencia en Tempranillo",
+        "resumen": "Proyecto público-privado desarrolla variedades con mayor resistencia a estrés hídrico.",
+        "categoria": "Investigacion",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "La Rioja",
+            "coordenadas": {
+                "lat": 42.4628,
+                "lon": -2.4450
+            },
+            "producto": "Viñedo",
+            "variedad": "Tempranillo"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 4,
+        "palabras_clave": [
+            "investigación",
+            "Tempranillo",
+            "resiliencia"
+        ],
+        "actores": [
+            "Universidad agraria regional",
+            "Bodega colaboradora"
+        ]
+    },
+    {
+        "id": "news_012",
+        "fecha_recogida": "2025-09-10",
+        "fecha_noticia": "2025-09-09",
+        "fuente": "freshplaza.es",
+        "url": "https://freshplaza.es/heladas-manchester-citricos-2025",
+        "titulo": "Heladas tempranas afectan cítricos en región mediterránea",
+        "resumen": "Olas de frío en zonas costeras provocan daños en flor y fruto en Navelina y otras variedades.",
+        "categoria": "Climatologia",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Comunidad Valenciana",
+            "coordenadas": {
+                "lat": 39.4702,
+                "lon": -0.3768
+            },
+            "producto": "Cítricos",
+            "variedad": "Navelina"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -3,
+        "palabras_clave": [
+            "heladas",
+            "cítricos",
+            "Navelina"
+        ],
+        "actores": [
+            "Agricultores locales",
+            "Servicios meteorológicos"
+        ]
+    },
+    {
+        "id": "news_013",
+        "fecha_recogida": "2025-09-08",
+        "fecha_noticia": "2025-09-07",
+        "fuente": "campodigital.es",
+        "url": "https://campodigital.es/robotica-cosecha-manzana-2025",
+        "titulo": "Robótica de cosecha prueba en manzana Gala",
+        "resumen": "Pruebas de robótica reducen costes de mano de obra y mejoran velocidad de recolección.",
+        "categoria": "Tecnologia_Agricola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Cataluña",
+            "coordenadas": {
+                "lat": 41.3879,
+                "lon": 2.1699
+            },
+            "producto": "Manzana",
+            "variedad": "Gala"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "robótica",
+            "Gala",
+            "cosecha"
+        ],
+        "actores": [
+            "Startup RobAgro",
+            "Cooperativa manzanera"
+        ],
+        "datos_produccion": {
+            "superficie_prueba_ha": 25
+        }
+    },
+    {
+        "id": "news_014",
+        "fecha_recogida": "2025-09-06",
+        "fecha_noticia": "2025-09-05",
+        "fuente": "elpais.com",
+        "url": "https://elpais.com/economia/aranceles-agricolas-2025",
+        "titulo": "Tensiones comerciales elevan incertidumbre en exportaciones hortofrutícolas",
+        "resumen": "Decisiones arancelarias por grandes potencias repercuten en cadenas logísticas y precios.",
+        "categoria": "Politica_Comercial",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Global",
+            "region": "Internacional",
+            "coordenadas": {
+                "lat": 0,
+                "lon": 0
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "aranceles",
+            "exportación",
+            "logística"
+        ],
+        "actores": [
+            "Gobiernos",
+            "Asociaciones exportadoras"
+        ]
+    },
+    {
+        "id": "news_015",
+        "fecha_recogida": "2025-09-04",
+        "fecha_noticia": "2025-09-03",
+        "fuente": "fao.org",
+        "url": "https://fao.org/plant-protection/alert-2025",
+        "titulo": "FAO emite guía para control de plagas en cultivos de arroz",
+        "resumen": "Nueva guía técnica para identificar y mitigar brotes de plagas en arrozales del sudeste asiático.",
+        "categoria": "Crisis_Fitosanitaria",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Varios",
+            "region": "Sudeste Asiático",
+            "coordenadas": {
+                "lat": 15.0,
+                "lon": 100.0
+            },
+            "producto": "Arroz",
+            "variedad": "Arborio"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -4,
+        "palabras_clave": [
+            "plaga",
+            "FAO",
+            "arroz"
+        ],
+        "actores": [
+            "FAO",
+            "Ministerios Agricultura regionales"
+        ]
+    },
+    {
+        "id": "news_016",
+        "fecha_recogida": "2025-09-02",
+        "fecha_noticia": "2025-09-01",
+        "fuente": "agroinformacion.com",
+        "url": "https://agroinformacion.com/exportaciones-cereales-espana-2025",
+        "titulo": "España incrementa exportación de cebada por contratos a largo plazo",
+        "resumen": "Contratos firmados con terceros países estabilizan precios y aumentan volumen exportado.",
+        "categoria": "Comercio_Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía/Castilla la Mancha",
+            "coordenadas": {
+                "lat": 38.0,
+                "lon": -3.5
+            },
+            "producto": "Cebada",
+            "variedad": "Cebada cervecera"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "exportación",
+            "cebada",
+            "contratos"
+        ],
+        "actores": [
+            "Exportadores",
+            "Agentes comerciales"
+        ],
+        "condiciones_mercado": {
+            "precio_medio_eur_tn": 195
+        }
+    },
+    {
+        "id": "news_017",
+        "fecha_recogida": "2025-08-31",
+        "fecha_noticia": "2025-08-30",
+        "fuente": "freshplaza.com",
+        "url": "https://freshplaza.com/uva-pasa-calidad-2025",
+        "titulo": "Mejora de calidad en uva de mesa aumenta demanda internacional",
+        "resumen": "Variedades con mejor poscosecha logran mayor aceptación en mercados asiáticos.",
+        "categoria": "Mercado_Precios",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Murcia",
+            "coordenadas": {
+                "lat": 37.9922,
+                "lon": -1.1307
+            },
+            "producto": "Uva de mesa",
+            "variedad": "Superior (variedades de exportación)"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "uva",
+            "exportación",
+            "poscosecha"
+        ],
+        "actores": [
+            "Empresas exportadoras"
+        ]
+    },
+    {
+        "id": "news_018",
+        "fecha_recogida": "2025-08-29",
+        "fecha_noticia": "2025-08-28",
+        "fuente": "campodigital.es",
+        "url": "https://campodigital.es/suelos-recuperacion-erosion",
+        "titulo": "Programas de recuperación de suelos erosionados lanzados por comunidades",
+        "resumen": "Proyectos regionales fomentan prácticas para retener suelo y agua en zonas degradadas.",
+        "categoria": "Sostenibilidad",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Regonal varias",
+            "coordenadas": {
+                "lat": 39.0,
+                "lon": -3.0
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "suelo",
+            "sostenibilidad",
+            "erosión"
+        ],
+        "actores": [
+            "ONG ambientales",
+            "Gobiernos autonómicos"
+        ]
+    },
+    {
+        "id": "news_019",
+        "fecha_recogida": "2025-08-27",
+        "fecha_noticia": "2025-08-26",
+        "fuente": "elpais.com",
+        "url": "https://elpais.com/sociedad/trabajadores-temporeros-2025",
+        "titulo": "Condiciones laborales y costes de recolección siguen siendo un reto",
+        "resumen": "Debate público sobre salarios y migración estacional en el sector hortofrutícola.",
+        "categoria": "Regulacion",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Huelva y Almería",
+            "coordenadas": {
+                "lat": 37.2608,
+                "lon": -6.9407
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "temporeros",
+            "salarios",
+            "mano de obra"
+        ],
+        "actores": [
+            "Sindicatos",
+            "Empresas agrícolas"
+        ]
+    },
+    {
+        "id": "news_020",
+        "fecha_recogida": "2025-08-25",
+        "fecha_noticia": "2025-08-24",
+        "fuente": "fao.org",
+        "url": "https://fao.org/food-price-monitor-2025",
+        "titulo": "Informe FAO sobre tendencias de precios alimentarios globales",
+        "resumen": "Variaciones en productos básicos reflejan volatilidad climática y logística.",
+        "categoria": "Mercado_Precios",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Global",
+            "region": "Global",
+            "coordenadas": {
+                "lat": 0,
+                "lon": 0
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "precios",
+            "FAO",
+            "volatilidad"
+        ],
+        "actores": [
+            "FAO",
+            "Organismos internacionales"
+        ]
+    },
+    {
+        "id": "news_021",
+        "fecha_recogida": "2025-08-23",
+        "fecha_noticia": "2025-08-22",
+        "fuente": "freshplaza.es",
+        "url": "https://freshplaza.es/aceituna-picual-rendimiento-2025",
+        "titulo": "Picual muestra variabilidad de rendimiento por falta de lluvias",
+        "resumen": "Productores ajustan poda y riego para mantener calidad del aceite.",
+        "categoria": "Climatologia",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.9036,
+                "lon": -4.7794
+            },
+            "producto": "Olivar",
+            "variedad": "Picual"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -3,
+        "palabras_clave": [
+            "Picual",
+            "olivar",
+            "sequía"
+        ],
+        "actores": [
+            "Cooperativas olivareras"
+        ]
+    },
+    {
+        "id": "news_022",
+        "fecha_recogida": "2025-08-21",
+        "fecha_noticia": "2025-08-20",
+        "fuente": "agroinformacion.com",
+        "url": "https://agroinformacion.com/innovacion-invernaderos-2025",
+        "titulo": "Nuevos invernaderos reducen consumo energético en hortícolas",
+        "resumen": "Sistemas de climatización y sombreado eficiente muestran ahorro energético.",
+        "categoria": "Tecnologia_Agricola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Almería",
+            "coordenadas": {
+                "lat": 36.8340,
+                "lon": -2.4637
+            },
+            "producto": "Tomate",
+            "variedad": "Cherry"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "invernadero",
+            "eficiencia",
+            "tomate"
+        ],
+        "actores": [
+            "Empresas invernaderos",
+            "Investigadores"
+        ]
+    },
+    {
+        "id": "news_023",
+        "fecha_recogida": "2025-08-19",
+        "fecha_noticia": "2025-08-18",
+        "fuente": "freshplaza.com",
+        "url": "https://freshplaza.com/banana-exportaciones-ecuador-2025",
+        "titulo": "Ecuador acelera exportación de banana para 2026",
+        "resumen": "Aumento de la demanda asiática impulsa planes expansión en Ecuador.",
+        "categoria": "Comercio_Internacional",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Ecuador",
+            "region": "Guayas",
+            "coordenadas": {
+                "lat": -1.8312,
+                "lon": -78.1834
+            },
+            "producto": "Banana",
+            "variedad": "Cavendish"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "banana",
+            "exportación",
+            "Cavendish"
+        ],
+        "actores": [
+            "Exportadores ecuatorianos"
+        ]
+    },
+    {
+        "id": "news_024",
+        "fecha_recogida": "2025-08-17",
+        "fecha_noticia": "2025-08-16",
+        "fuente": "campodigital.es",
+        "url": "https://campodigital.es/apoyo-jovenes-agricultores-2025",
+        "titulo": "Programas de apoyo a jóvenes agricultores para renovación generacional",
+        "resumen": "Subvenciones y formación buscan atraer nuevos activos al campo.",
+        "categoria": "Ayudas_Subvenciones",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.0,
+                "lon": -4.0
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "jóvenes",
+            "subvenciones",
+            "formación"
+        ],
+        "actores": [
+            "MAPA",
+            "Programas autonómicos"
+        ]
+    },
+    {
+        "id": "news_025",
+        "fecha_recogida": "2025-08-15",
+        "fecha_noticia": "2025-08-14",
+        "fuente": "elpais.com",
+        "url": "https://elpais.com/economia/transporte-alimentos-2025",
+        "titulo": "Problemas logísticos encarecen transporte de frutas frescas",
+        "resumen": "Escasez de contenedores y costes energéticos elevan precio final al consumidor.",
+        "categoria": "Logistica",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Puerto (varios)",
+            "coordenadas": {
+                "lat": 36.0,
+                "lon": -2.0
+            },
+            "producto": "Frutas frescas",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "logística",
+            "contenedores",
+            "precio"
+        ],
+        "actores": [
+            "Transportistas",
+            "Exportadores"
+        ]
+    },
+    {
+        "id": "news_026",
+        "fecha_recogida": "2025-08-13",
+        "fecha_noticia": "2025-08-12",
+        "fuente": "fao.org",
+        "url": "https://fao.org/invasive-species/report-2025",
+        "titulo": "Alerta por especies invasoras que afectan cultivos hortícolas",
+        "resumen": "Regiones costeras registran aparición de nuevas plagas invasoras.",
+        "categoria": "Crisis_Fitosanitaria",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Varios",
+            "region": "Costas mediterráneas",
+            "coordenadas": {
+                "lat": 36.0,
+                "lon": 2.0
+            },
+            "producto": "Hortícolas",
+            "variedad": ""
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -4,
+        "palabras_clave": [
+            "invasora",
+            "plaga",
+            "hortícolas"
+        ],
+        "actores": [
+            "FAO",
+            "autoridades fitosanitarias"
+        ]
+    },
+    {
+        "id": "news_027",
+        "fecha_recogida": "2025-08-11",
+        "fecha_noticia": "2025-08-10",
+        "fuente": "freshplaza.es",
+        "url": "https://freshplaza.es/aceituna-aceite-export-2025",
+        "titulo": "Demanda internacional de aceite de oliva mantiene precios elevados",
+        "resumen": "Mercado externo sostiene márgenes a pesar de menor cosecha local.",
+        "categoria": "Mercado_Precios",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.3826,
+                "lon": -5.9963
+            },
+            "producto": "Aceite de oliva",
+            "variedad": "Picual"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "aceite",
+            "Picual",
+            "exportación"
+        ],
+        "actores": [
+            "Exportadores aceite"
+        ]
+    },
+    {
+        "id": "news_028",
+        "fecha_recogida": "2025-08-09",
+        "fecha_noticia": "2025-08-08",
+        "fuente": "agroinformacion.com",
+        "url": "https://agroinformacion.com/nuevas-normas-pesticidas-ue-2025",
+        "titulo": "La UE revisa normas sobre determinados productos fitosanitarios",
+        "resumen": "Cambios regulatorios obligan a adaptaciones en calendarios de tratamiento.",
+        "categoria": "Regulacion",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Unión Europea",
+            "region": "Bruselas",
+            "coordenadas": {
+                "lat": 50.8503,
+                "lon": 4.3517
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Bajo",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "fitosanitarios",
+            "regulación",
+            "UE"
+        ],
+        "actores": [
+            "Comisión Europea",
+            "Asociaciones de agricultores"
+        ]
+    },
+    {
+        "id": "news_029",
+        "fecha_recogida": "2025-08-07",
+        "fecha_noticia": "2025-08-06",
+        "fuente": "freshplaza.com",
+        "url": "https://freshplaza.com/pepino-invernadero-almeria-2025",
+        "titulo": "Producción de pepino en invernadero registra mayor eficiencia",
+        "resumen": "Nuevas prácticas reducen pérdidas poscosecha y aumentan calidad.",
+        "categoria": "Tecnologia_Agricola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Almería",
+            "coordenadas": {
+                "lat": 36.8340,
+                "lon": -2.4637
+            },
+            "producto": "Pepino",
+            "variedad": "California Wonder"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "invernadero",
+            "pepino",
+            "eficiencia"
+        ],
+        "actores": [
+            "Productores invernadero"
+        ]
+    },
+    {
+        "id": "news_030",
+        "fecha_recogida": "2025-08-05",
+        "fecha_noticia": "2025-08-04",
+        "fuente": "campodigital.es",
+        "url": "https://campodigital.es/almacenamiento-frutas-frio-2025",
+        "titulo": "Nuevas cámaras de frío optimizan conservación de fruta de temporada",
+        "resumen": "Mejoras técnicas reducen pérdidas en cadena de frío y alargan vida útil.",
+        "categoria": "Logistica",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Murcia",
+            "coordenadas": {
+                "lat": 37.9922,
+                "lon": -1.1307
+            },
+            "producto": "Melocotón",
+            "variedad": "Calanda"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "frío",
+            "almacenamiento",
+            "melocotón"
+        ],
+        "actores": [
+            "Operadores logísticos",
+            "Empresas frutícolas"
+        ]
+    },
+    {
+        "id": "news_031",
+        "fecha_recogida": "2025-08-03",
+        "fecha_noticia": "2025-08-02",
+        "fuente": "elpais.com",
+        "url": "https://elpais.com/economia/inversiones-agro-2025",
+        "titulo": "Inversión privada en tecnología agraria aumenta en España",
+        "resumen": "Fondos atraídos por soluciones de eficiencia energética y digitalización.",
+        "categoria": "Investigacion",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.4168,
+                "lon": -3.7038
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "inversión",
+            "agrotech",
+            "digitalización"
+        ],
+        "actores": [
+            "VCs",
+            "Startups agrarias"
+        ]
+    },
+    {
+        "id": "news_032",
+        "fecha_recogida": "2025-08-01",
+        "fecha_noticia": "2025-07-31",
+        "fuente": "fao.org",
+        "url": "https://fao.org/fishery/impact-2025",
+        "titulo": "FAO publica estudio sobre impacto del cambio climático en pesca y agricultura costera",
+        "resumen": "Modelos proyectan cambios en productividad y necesidad de adaptación.",
+        "categoria": "Sostenibilidad",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Global",
+            "region": "Costas",
+            "coordenadas": {
+                "lat": 0,
+                "lon": 0
+            },
+            "producto": "Varios",
+            "variedad": ""
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "clima",
+            "costas",
+            "FAO"
+        ],
+        "actores": [
+            "FAO",
+            "investigadores"
+        ]
+    },
+    {
+        "id": "news_033",
+        "fecha_recogida": "2025-07-30",
+        "fecha_noticia": "2025-07-29",
+        "fuente": "freshplaza.es",
+        "url": "https://freshplaza.es/almendra-rendimiento-andalucia-2025",
+        "titulo": "Productores de almendra revisan plantaciones por estrés hídrico",
+        "resumen": "Almendros muestran caída de producción en explotaciones sin riego definido.",
+        "categoria": "Climatologia",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.0,
+                "lon": -4.5
+            },
+            "producto": "Almendra",
+            "variedad": "Común"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -3,
+        "palabras_clave": [
+            "almendra",
+            "sequía",
+            "riego"
+        ],
+        "actores": [
+            "Productores",
+            "Cooperativas"
+        ]
+    },
+    {
+        "id": "news_034",
+        "fecha_recogida": "2025-07-28",
+        "fecha_noticia": "2025-07-27",
+        "fuente": "agroinformacion.com",
+        "url": "https://agroinformacion.com/mercado-citricos-2025",
+        "titulo": "Ajustes en el mercado de cítricos por campañas desincronizadas",
+        "resumen": "Competencia entre España e importaciones altera ventanas de venta.",
+        "categoria": "Comercio_Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Comunidad Valenciana",
+            "coordenadas": {
+                "lat": 38.0,
+                "lon": -0.5
+            },
+            "producto": "Cítricos",
+            "variedad": "Valencias/Navelina"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "cítricos",
+            "campañas",
+            "competencia"
+        ],
+        "actores": [
+            "Productores",
+            "Exportadores"
+        ]
+    },
+    {
+        "id": "news_006",
+        "fecha_recogida": "2025-09-30",
+        "fecha_noticia": "2025-09-29",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/espana-exporta-aguacate-2025",
+        "titulo": "España aumenta exportaciones de aguacate Hass hacia Europa",
+        "resumen": "La campaña 2025 registra un aumento del 18% en exportaciones de aguacate variedad Hass desde la costa de Andalucía hacia mercados europeos.",
+        "categoria": "Comercio Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 36.7213,
+                "lon": -4.4214
+            },
+            "producto": "Aguacate",
+            "variedad": "Hass"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "aguacate",
+            "exportación",
+            "Hass",
+            "Andalucía"
+        ],
+        "actores": [
+            "Exportadores andaluces",
+            "Asociaciones de productores"
+        ]
+    },
+    {
+        "id": "news_007",
+        "fecha_recogida": "2025-09-30",
+        "fecha_noticia": "2025-09-28",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/ayudas-riego-la-mancha-2025",
+        "titulo": "Ayudas para sistemas de riego eficientemente en La Mancha",
+        "resumen": "El gobierno regional aprueba subvenciones para modernizar riego en cultivos de manchegos, priorizando viñedo Tempranillo y olivar Picual.",
+        "categoria": "Regulación",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Castilla-La Mancha",
+            "coordenadas": {
+                "lat": 39.2742,
+                "lon": -3.7003
+            },
+            "producto": "Viñedo/Olivar",
+            "variedad": "Tempranillo/Picual"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "subvención",
+            "riego",
+            "modernización",
+            "viñedo"
+        ],
+        "actores": [
+            "Consejería de Agricultura CLM",
+            "Cooperativas"
+        ]
+    },
+    {
+        "id": "news_008",
+        "fecha_recogida": "2025-09-29",
+        "fecha_noticia": "2025-09-27",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/robot-recolector-fresas-2025",
+        "titulo": "Robots recolectores prueban su eficacia en cultivo de fresa Chandler",
+        "resumen": "Pruebas piloto con robots aumentan la velocidad de cosecha y reducen costes en fincas de Huelva que cultivan fresa variedad Chandler.",
+        "categoria": "Tecnología Agrícola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Huelva",
+            "coordenadas": {
+                "lat": 37.2614,
+                "lon": -6.9447
+            },
+            "producto": "Fresa",
+            "variedad": "Chandler"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 4,
+        "palabras_clave": [
+            "robot",
+            "fresa",
+            "Chandler",
+            "automatización"
+        ],
+        "actores": [
+            "Empresa Agrotech",
+            "Cooperativa local"
+        ]
+    },
+    {
+        "id": "news_009",
+        "fecha_recogida": "2025-09-28",
+        "fecha_noticia": "2025-09-26",
+        "fuente": "FAO",
+        "url": "https://www.fao.org/emergencies/alertas/plaga-locustas-2025",
+        "titulo": "Alerta FAO: rebrotes de langosta afectan cereal en África del Norte",
+        "resumen": "LA FAO advierte sobre rebrotes de langostas que podrían afectar cultivos de trigo y cebada en zonas del Magreb.",
+        "categoria": "Crisis Fitosanitaria",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Marruecos",
+            "region": "Magreb",
+            "coordenadas": {
+                "lat": 31.7917,
+                "lon": -7.0926
+            },
+            "producto": "Trigo",
+            "variedad": "Trigo blando"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -4,
+        "palabras_clave": [
+            "langosta",
+            "FAO",
+            "trigo",
+            "plaga"
+        ],
+        "actores": [
+            "FAO",
+            "Ministerios agrícolas regionales"
+        ]
+    },
+    {
+        "id": "news_010",
+        "fecha_recogida": "2025-09-28",
+        "fecha_noticia": "2025-09-25",
+        "fuente": "El País",
+        "url": "https://elpais.com/economia/precios-frutas-2025",
+        "titulo": "Subida de precios en frutas por incremento del transporte",
+        "resumen": "El alza en costes logísticos eleva los precios al por mayor de frutas como plátano Cavendish y manzana Golden en mercados europeos.",
+        "categoria": "Mercado / Economía",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.4168,
+                "lon": -3.7038
+            },
+            "producto": "Plátano/Manzana",
+            "variedad": "Cavendish/Golden"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "precios",
+            "logística",
+            "plátano",
+            "manzana"
+        ],
+        "actores": [
+            "Operadores logísticos",
+            "Mercados mayoristas"
+        ]
+    },
+    {
+        "id": "news_011",
+        "fecha_recogida": "2025-09-27",
+        "fecha_noticia": "2025-09-26",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/italia-crece-ciruelos-2025",
+        "titulo": "Crecimiento de producción de ciruela en Italia impulsa exportaciones",
+        "resumen": "Productores italianos registran cosecha de ciruela Santa Rosa superior a la media, aumentando envíos al norte de Europa.",
+        "categoria": "Comercio Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Italia",
+            "region": "Puglia",
+            "coordenadas": {
+                "lat": 41.1256,
+                "lon": 16.8638
+            },
+            "producto": "Ciruela",
+            "variedad": "Santa Rosa"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "ciruela",
+            "exportación",
+            "Santa Rosa"
+        ],
+        "actores": [
+            "Productores regionales",
+            "Exportadores"
+        ]
+    },
+    {
+        "id": "news_012",
+        "fecha_recogida": "2025-09-26",
+        "fecha_noticia": "2025-09-24",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/impacto-sequia-olivar-jaen-2025",
+        "titulo": "Sequía reduce rendimiento del olivar Manzanilla en Jaén",
+        "resumen": "Periodo sin lluvias impacta rendimientos, estimándose disminución de hasta el 25% en Manzanilla de Jaén.",
+        "categoria": "Climatología",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Jaén",
+            "coordenadas": {
+                "lat": 37.7734,
+                "lon": -3.7900
+            },
+            "producto": "Olivar",
+            "variedad": "Manzanilla"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -3,
+        "palabras_clave": [
+            "sequía",
+            "olivar",
+            "Manzanilla",
+            "Jaén"
+        ],
+        "actores": [
+            "Ayuntamiento de Jaén",
+            "Organizaciones de regadío"
+        ]
+    },
+    {
+        "id": "news_013",
+        "fecha_recogida": "2025-09-25",
+        "fecha_noticia": "2025-09-23",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/tecnologia-invernaderos-almeria-2025",
+        "titulo": "Nuevos invernaderos inteligentes incrementan producción de pimiento",
+        "resumen": "Implementación de control climático en invernaderos de Almería mejora calibre y productividad de pimiento variedad California Wonder.",
+        "categoria": "Tecnología Agrícola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Almería",
+            "coordenadas": {
+                "lat": 36.8340,
+                "lon": -2.4637
+            },
+            "producto": "Pimiento",
+            "variedad": "California Wonder"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "invernadero",
+            "control climático",
+            "pimiento"
+        ],
+        "actores": [
+            "Empresas de invernaderos",
+            "Productores locales"
+        ]
+    },
+    {
+        "id": "news_014",
+        "fecha_recogida": "2025-09-25",
+        "fecha_noticia": "2025-09-22",
+        "fuente": "FAO",
+        "url": "https://www.fao.org/news/informe-cereal-volatilidad-2025",
+        "titulo": "FAO reporta volatilidad en mercados de cereal por clima extremo",
+        "resumen": "La organización indica que eventos extremos están agravando la volatilidad de precios en cereales claves como trigo y maíz.",
+        "categoria": "Mercado / Economía",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Global",
+            "region": "Global",
+            "coordenadas": {
+                "lat": 0.0,
+                "lon": 0.0
+            },
+            "producto": "Trigo/Maíz",
+            "variedad": "Diversas"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "FAO",
+            "mercados",
+            "trigo",
+            "maíz"
+        ],
+        "actores": [
+            "FAO",
+            "Operadores de mercado"
+        ]
+    },
+    {
+        "id": "news_015",
+        "fecha_recogida": "2025-09-24",
+        "fecha_noticia": "2025-09-23",
+        "fuente": "El País",
+        "url": "https://elpais.com/sociedad/escasez-agua-agricultura-2025",
+        "titulo": "Escasez de agua pone presión sobre sector hortofrutícola",
+        "resumen": "Regiones áridas revisan planes de asignación de agua; cultivos intensivos como tomate Raf y pepino se ven afectados.",
+        "categoria": "Climatología",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Regiones áridas",
+            "coordenadas": {
+                "lat": 38.0,
+                "lon": -1.5
+            },
+            "producto": "Tomate/Pepino",
+            "variedad": "Raf/Pepino europeo"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -3,
+        "palabras_clave": [
+            "agua",
+            "escasez",
+            "tomate",
+            "pepino"
+        ],
+        "actores": [
+            "Gobiernos regionales",
+            "Agricultores"
+        ]
+    },
+    {
+        "id": "news_016",
+        "fecha_recogida": "2025-09-24",
+        "fecha_noticia": "2025-09-22",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/holanda-ajo-exports-2025",
+        "titulo": "Países Bajos mejora técnicas y aumenta exportación de ajo",
+        "resumen": "Técnicas de almacenamiento y clasificación aumentan la vida útil y permiten mayores exportaciones de ajo variedad Lautrec.",
+        "categoria": "Tecnología Agrícola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Países Bajos",
+            "region": "Limburgo",
+            "coordenadas": {
+                "lat": 50.9311,
+                "lon": 5.3378
+            },
+            "producto": "Ajo",
+            "variedad": "Lautrec"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "ajo",
+            "exportación",
+            "almacenamiento"
+        ],
+        "actores": [
+            "Empresas de postcosecha",
+            "Exportadores"
+        ]
+    },
+    {
+        "id": "news_017",
+        "fecha_recogida": "2025-09-23",
+        "fecha_noticia": "2025-09-20",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/precios-patata-2025",
+        "titulo": "Caída de precios en patata Agria presiona márgenes de productores",
+        "resumen": "La sobreoferta estacional provoca descenso de precios en mercado mayorista para la variedad Agria.",
+        "categoria": "Mercado / Economía",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Región productora",
+            "coordenadas": {
+                "lat": 41.0,
+                "lon": -3.0
+            },
+            "producto": "Patata",
+            "variedad": "Agria"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "patata",
+            "precio",
+            "Agria",
+            "mercado"
+        ],
+        "actores": [
+            "Productores",
+            "Mercados mayoristas"
+        ]
+    },
+    {
+        "id": "news_018",
+        "fecha_recogida": "2025-09-22",
+        "fecha_noticia": "2025-09-21",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/ensayos-fertilizantes-olivar-2025",
+        "titulo": "Ensayos muestran mejora de rendimiento en olivar Picual con nuevo fertilizante",
+        "resumen": "Ensayos a campo muestran incrementos de rendimiento del 6% en olivar Picual tras aplicación de fórmula específica.",
+        "categoria": "Investigación / Ciencia",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.0,
+                "lon": -4.5
+            },
+            "producto": "Olivar",
+            "variedad": "Picual"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "fertilizante",
+            "ensayo",
+            "Picual"
+        ],
+        "actores": [
+            "Universidad agraria",
+            "Empresas de insumos"
+        ]
+    },
+    {
+        "id": "news_019",
+        "fecha_recogida": "2025-09-21",
+        "fecha_noticia": "2025-09-19",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/marruecos-citrico-2025",
+        "titulo": "Marruecos amplía producción de naranja Navelina para exportar a Europa",
+        "resumen": "La campaña marroquí espera cosechas superiores en naranja Navelina, con aumento de envíos al Mediterráneo.",
+        "categoria": "Comercio Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Marruecos",
+            "region": "Agadir",
+            "coordenadas": {
+                "lat": 30.4278,
+                "lon": -9.5981
+            },
+            "producto": "Naranja",
+            "variedad": "Navelina"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "naranja",
+            "exportación",
+            "Navelina"
+        ],
+        "actores": [
+            "Exportadores marroquíes",
+            "Mercados europeos"
+        ]
+    },
+    {
+        "id": "news_020",
+        "fecha_recogida": "2025-09-20",
+        "fecha_noticia": "2025-09-18",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/ayudas-bio-horticultura-2025",
+        "titulo": "Convocatoria de ayudas para agricultura ecológica en hortalizas",
+        "resumen": "Se publican ayudas para conversión a ecológico en cultivos hortícolas; prioridad para productores de tomate y lechuga.",
+        "categoria": "Regulación",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.0,
+                "lon": -3.5
+            },
+            "producto": "Tomate/Lechuga",
+            "variedad": "Raf/Various"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "ecológico",
+            "ayudas",
+            "conversión"
+        ],
+        "actores": [
+            "MAPA",
+            "Productores ecológicos"
+        ]
+    },
+    {
+        "id": "news_021",
+        "fecha_recogida": "2025-09-19",
+        "fecha_noticia": "2025-09-17",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/seguimiento-heladas-vinedo-2025",
+        "titulo": "Alertas por heladas tardías afectan viñedo Albariño",
+        "resumen": "Heladas localizadas dañan brotaciones tardías en viñedos de Rías Baixas, afectando Albariño joven.",
+        "categoria": "Climatología",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Galicia",
+            "coordenadas": {
+                "lat": 42.4320,
+                "lon": -8.6500
+            },
+            "producto": "Viñedo",
+            "variedad": "Albariño"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": -2,
+        "palabras_clave": [
+            "heladas",
+            "viñedo",
+            "Albariño"
+        ],
+        "actores": [
+            "Denominación de Origen Rías Baixas",
+            "Viticultores"
+        ]
+    },
+    {
+        "id": "news_022",
+        "fecha_recogida": "2025-09-18",
+        "fecha_noticia": "2025-09-16",
+        "fuente": "FAO",
+        "url": "https://www.fao.org/news/estadisticas-hortalizas-2025",
+        "titulo": "Informe FAO: aumento global de demanda de hortalizas procesadas",
+        "resumen": "La FAO publica tendencias que muestran crecimiento sostenido de demanda de hortalizas procesadas en mercados emergentes.",
+        "categoria": "Mercado / Economía",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Global",
+            "region": "Global",
+            "coordenadas": {
+                "lat": 0.0,
+                "lon": 0.0
+            },
+            "producto": "Hortalizas",
+            "variedad": "Diversas"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 1,
+        "palabras_clave": [
+            "FAO",
+            "demanda",
+            "procesado"
+        ],
+        "actores": [
+            "FAO",
+            "Industria agroalimentaria"
+        ]
+    },
+    {
+        "id": "news_023",
+        "fecha_recogida": "2025-09-17",
+        "fecha_noticia": "2025-09-15",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/espana-uva-table-2025",
+        "titulo": "España consolida exportación de uva de mesa Thompson Seedless",
+        "resumen": "La campaña de uva de mesa aporta envíos significativos de la variedad Thompson Seedless a mercados del norte de Europa.",
+        "categoria": "Comercio Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Murcia",
+            "coordenadas": {
+                "lat": 37.9922,
+                "lon": -1.1307
+            },
+            "producto": "Uva de mesa",
+            "variedad": "Thompson Seedless"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "uva de mesa",
+            "exportación",
+            "Thompson Seedless"
+        ],
+        "actores": [
+            "Exportadores regionales",
+            "Empresas de embalaje"
+        ]
+    },
+    {
+        "id": "news_024",
+        "fecha_recogida": "2025-09-16",
+        "fecha_noticia": "2025-09-14",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/alerta-araña-roja-invernaderos-2025",
+        "titulo": "Plaga de araña roja detectada en invernaderos de Murcia",
+        "resumen": "Se comunica brote de Tetranychus urticae en cultivos intensivos; recomendadas medidas fitosanitarias y control biológico.",
+        "categoria": "Crisis Fitosanitaria",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Murcia",
+            "coordenadas": {
+                "lat": 37.9922,
+                "lon": -1.1307
+            },
+            "producto": "Hortalizas",
+            "variedad": "Diversas"
+        },
+        "impacto_produccion": "Alto",
+        "graduacion_sentimiento": -4,
+        "palabras_clave": [
+            "araña roja",
+            "plaga",
+            "invernadero"
+        ],
+        "actores": [
+            "Servicios de sanidad vegetal",
+            "Agricultores"
+        ]
+    },
+    {
+        "id": "news_025",
+        "fecha_recogida": "2025-09-15",
+        "fecha_noticia": "2025-09-13",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/mejoras-logistica-fruta-2025",
+        "titulo": "Mejoras logísticas reducen pérdidas postcosecha en cítricos",
+        "resumen": "Nuevas rutas refrigeradas y embalajes optimizados disminuyen pérdidas en naranja Valencia en exportación.",
+        "categoria": "Logística",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Comunidad Valenciana",
+            "coordenadas": {
+                "lat": 39.4699,
+                "lon": -0.3763
+            },
+            "producto": "Naranja",
+            "variedad": "Valencia"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "logística",
+            "postcosecha",
+            "cítricos"
+        ],
+        "actores": [
+            "Operadores logísticos",
+            "Exportadores valencianos"
+        ]
+    },
+    {
+        "id": "news_026",
+        "fecha_recogida": "2025-09-14",
+        "fecha_noticia": "2025-09-12",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/grecia-aceituna-2025",
+        "titulo": "Grecia mantiene producción de aceituna Koroneiki estable pese al clima",
+        "resumen": "La producción de Koroneiki se mantiene estable gracias a técnicas de manejo adaptativo.",
+        "categoria": "Climatología",
+        "idioma": "en",
+        "entidades": {
+            "pais": "Grecia",
+            "region": "Peloponeso",
+            "coordenadas": {
+                "lat": 37.0380,
+                "lon": 22.1140
+            },
+            "producto": "Aceituna",
+            "variedad": "Koroneiki"
+        },
+        "impacto_produccion": "Bajo",
+        "graduacion_sentimiento": 1,
+        "palabras_clave": [
+            "Koroneiki",
+            "aceituna",
+            "manejo"
+        ],
+        "actores": [
+            "Productores griegos",
+            "Asociaciones locales"
+        ]
+    },
+    {
+        "id": "news_027",
+        "fecha_recogida": "2025-09-13",
+        "fecha_noticia": "2025-09-11",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/ayuda-inversion-frutas-2025",
+        "titulo": "Plan de inversión para modernizar empaquetado de frutas",
+        "resumen": "Líneas de financiación para mejora de empaquetado y trazabilidad dirigidas a productores de manzana y pera.",
+        "categoria": "Regulación",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.0,
+                "lon": -3.5
+            },
+            "producto": "Manzana/Pera",
+            "variedad": "Golden/Conference"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "financiación",
+            "empaquetado",
+            "trazabilidad"
+        ],
+        "actores": [
+            "Bancos",
+            "Productores"
+        ]
+    },
+    {
+        "id": "news_028",
+        "fecha_recogida": "2025-09-12",
+        "fecha_noticia": "2025-09-10",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/agua-eficiencia-infraestructura-2025",
+        "titulo": "Proyectos de infraestructura hídrica prometen mejorar riego en zonas secas",
+        "resumen": "Nuevos proyectos hidráulicos buscan optimizar almacenamiento y distribución para cultivos de arroz y olivar.",
+        "categoria": "Infraestructura",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Regiones secas",
+            "coordenadas": {
+                "lat": 38.5,
+                "lon": -2.0
+            },
+            "producto": "Arroz/Olivar",
+            "variedad": "Diversas"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "infraestructura",
+            "riego",
+            "almacenamiento"
+        ],
+        "actores": [
+            "Administración central",
+            "Comunidades de regantes"
+        ]
+    },
+    {
+        "id": "news_029",
+        "fecha_recogida": "2025-09-11",
+        "fecha_noticia": "2025-09-09",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/espana-fresas-export-2025",
+        "titulo": "Exportadores españoles diversifican mercados para fresa Camarosa",
+        "resumen": "Productores buscan nuevos destinos fuera de la UE para equilibrar precios y reducir estacionalidad.",
+        "categoria": "Comercio Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Huelva",
+            "coordenadas": {
+                "lat": 37.2614,
+                "lon": -6.9447
+            },
+            "producto": "Fresa",
+            "variedad": "Camarosa"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "exportación",
+            "fresa",
+            "Camarosa"
+        ],
+        "actores": [
+            "Exportadores",
+            "Cooperativas"
+        ]
+    },
+    {
+        "id": "news_030",
+        "fecha_recogida": "2025-09-10",
+        "fecha_noticia": "2025-09-08",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/normativa-fitosanitaria-ue-2025",
+        "titulo": "Nueva normativa fitosanitaria de la UE afecta uso de ciertos plaguicidas",
+        "resumen": "Propuesta normativa limita moléculas en tratamientos; impacto en programas de control para vid y citrus.",
+        "categoria": "Regulación",
+        "idioma": "es",
+        "entidades": {
+            "pais": "Unión Europea",
+            "region": "Bruselas",
+            "coordenadas": {
+                "lat": 50.8503,
+                "lon": 4.3517
+            },
+            "producto": "Vid/Cítricos",
+            "variedad": "Tempranillo/Valencia"
+        },
+        "impacto_produccion": "Indeterminado",
+        "graduacion_sentimiento": -1,
+        "palabras_clave": [
+            "normativa",
+            "fitosanitario",
+            "UE"
+        ],
+        "actores": [
+            "Comisión Europea",
+            "Asociaciones agrarias"
+        ]
+    },
+    {
+        "id": "news_031",
+        "fecha_recogida": "2025-09-09",
+        "fecha_noticia": "2025-09-07",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/innovacion-semillero-2025",
+        "titulo": "Nuevas variedades de lechuga aumentan resistencia a enfermedades",
+        "resumen": "Ensayos con híbridos muestran mayor tolerancia a oídio en variedades comerciales de lechuga.",
+        "categoria": "Investigación / Ciencia",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Cataluña",
+            "coordenadas": {
+                "lat": 41.3879,
+                "lon": 2.1699
+            },
+            "producto": "Lechuga",
+            "variedad": "Híbrido comercial"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "variedades",
+            "resistencia",
+            "lechuga"
+        ],
+        "actores": [
+            "Empresas de semillas",
+            "Centros de investigación"
+        ]
+    },
+    {
+        "id": "news_032",
+        "fecha_recogida": "2025-09-08",
+        "fecha_noticia": "2025-09-06",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/espana-berenjena-2025",
+        "titulo": "Mercado de berenjena muestra estabilidad de precios en otoño",
+        "resumen": "La variedad larga italiana mantiene precios estables gracias a oferta controlada y demanda domesticada.",
+        "categoria": "Mercado / Economía",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Murcia/Almería",
+            "coordenadas": {
+                "lat": 37.9922,
+                "lon": -1.1307
+            },
+            "producto": "Berenjena",
+            "variedad": "Larga italiana"
+        },
+        "impacto_produccion": "Bajo",
+        "graduacion_sentimiento": 1,
+        "palabras_clave": [
+            "berenjena",
+            "precio",
+            "mercado"
+        ],
+        "actores": [
+            "Productores",
+            "Distribuidores"
+        ]
+    },
+    {
+        "id": "news_033",
+        "fecha_recogida": "2025-09-07",
+        "fecha_noticia": "2025-09-05",
+        "fuente": "Agroinformacion",
+        "url": "https://agroinformacion.com/cooperativas-innovacion-2025",
+        "titulo": "Cooperativas impulsan agrupación para compra conjunta de fertilizantes",
+        "resumen": "Varias cooperativas se unen para negociar mejores precios de insumos favoreciendo pequeños productores de cebolla y ajo.",
+        "categoria": "Mercado / Economía",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Nacional",
+            "coordenadas": {
+                "lat": 40.0,
+                "lon": -3.5
+            },
+            "producto": "Cebolla/Ajo",
+            "variedad": "Kennebec/Lautrec"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "cooperativa",
+            "compra conjunta",
+            "fertilizantes"
+        ],
+        "actores": [
+            "Cooperativas",
+            "Asociaciones agrarias"
+        ]
+    },
+    {
+        "id": "news_034",
+        "fecha_recogida": "2025-09-06",
+        "fecha_noticia": "2025-09-04",
+        "fuente": "Campo Digital",
+        "url": "https://campodigital.es/seguridad-alimentaria-bioinsumos-2025",
+        "titulo": "Bioinsumos ganan terreno como alternativa a químicos en cítricos",
+        "resumen": "Ensayos con bioinsecticidas reducen incidencia de plagas en naranjos sin residuos químicos.",
+        "categoria": "Tecnología Agrícola",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Valencia",
+            "coordenadas": {
+                "lat": 39.4699,
+                "lon": -0.3763
+            },
+            "producto": "Cítricos",
+            "variedad": "Navelina/Valencia"
+        },
+        "impacto_produccion": "Positivo",
+        "graduacion_sentimiento": 3,
+        "palabras_clave": [
+            "bioinsumos",
+            "cítricos",
+            "plagas"
+        ],
+        "actores": [
+            "Investigadores",
+            "Productores"
+        ]
+    },
+    {
+        "id": "news_035",
+        "fecha_recogida": "2025-09-05",
+        "fecha_noticia": "2025-09-03",
+        "fuente": "FreshPlaza",
+        "url": "https://www.freshplaza.es/noticia/espana-hortalizas-export-2025",
+        "titulo": "Aumento de demanda de judía verde en mercados nórdicos",
+        "resumen": "Productores españoles incrementan envíos de judía verde fina gracias a acuerdos con distribuidores nórdicos.",
+        "categoria": "Comercio Internacional",
+        "idioma": "es",
+        "entidades": {
+            "pais": "España",
+            "region": "Andalucía",
+            "coordenadas": {
+                "lat": 37.3891,
+                "lon": -5.9845
+            },
+            "producto": "Judía verde",
+            "variedad": "Fina"
+        },
+        "impacto_produccion": "Medio",
+        "graduacion_sentimiento": 2,
+        "palabras_clave": [
+            "judía",
+            "exportación",
+            "nórdicos"
+        ],
+        "actores": [
+            "Exportadores",
+            "Distribuidores nórdicos"
+        ]
+    }
+]
