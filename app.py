@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 import json
-import folium
-from streamlit_folium import st_folium
 
 # ==== Cargar datos ====
 with open("noticias.json", "r", encoding="utf-8") as f:
@@ -11,7 +9,7 @@ with open("noticias.json", "r", encoding="utf-8") as f:
 with open("zonas.json", "r", encoding="utf-8") as f:
     zonas = json.load(f)
 
-# Normalizar noticias y zonas en DataFrames
+# Normalizar datos
 df_noticias = pd.json_normalize(noticias)
 df_zonas = pd.json_normalize(
     zonas,
@@ -50,7 +48,7 @@ else:
     st.info("No hay noticias para esta variedad.")
 
 # ==== Cruce con zonas de producción ====
-st.write("### Zonas de producción afectadas")
+st.write("### Zonas de producción y noticias en el mapa")
 
 producto = df_filtrado["entidades.producto"].iloc[0] if not df_filtrado.empty else None
 zonas_rel = df_zonas[
@@ -58,44 +56,46 @@ zonas_rel = df_zonas[
     (df_zonas["entidades.producto"] == producto)
 ]
 
+# Preparar datos de mapa
+map_points = []
+
 if not zonas_rel.empty:
-    mapa = folium.Map(location=[20, 0], zoom_start=2)
-
-    # Marcadores de zonas
     for _, row in zonas_rel.iterrows():
-        inicio = row["periodo_produccion.inicio_mes"]
-        fin = row["periodo_produccion.fin_mes"]
-        popup = f"""
-        <b>{row['entidades.producto']} ({row['entidades.variedad']})</b><br>
-        {row['region']} - {row['pais']}<br>
-        Periodo: {inicio} - {fin}<br>
-        Producción estimada: {row['volumen_estimado_tn']:,} t
-        """
-        folium.Marker(
-            location=[row["coordenadas.lat"], row["coordenadas.lon"]],
-            popup=popup,
-            icon=folium.Icon(color="green", icon="leaf")
-        ).add_to(mapa)
+        map_points.append({
+            "lat": row["coordenadas.lat"],
+            "lon": row["coordenadas.lon"],
+            "tipo": "Zona",
+            "pais": row["pais"],
+            "region": row["region"],
+            "producto": row["entidades.producto"],
+            "variedad": row["entidades.variedad"],
+            "volumen_tn": row["volumen_estimado_tn"],
+            "periodo_inicio": row["periodo_produccion.inicio_mes"],
+            "periodo_fin": row["periodo_produccion.fin_mes"]
+        })
 
-    # Marcadores de noticias
+if not df_filtrado.empty:
     for _, row in df_filtrado.iterrows():
         if "entidades.coordenadas.lat" in row and pd.notna(row["entidades.coordenadas.lat"]):
-            popup = f"""
-            <b>Noticia:</b> {row['titulo']}<br>
-            Nivel: {row.get('nivel', 'N/A')}<br>
-            Razón: {row.get('razon', 'N/A')}<br>
-            Fecha: {row['fecha_recogida']}<br>
-            Fuente: {row['fuente']}
-            """
-            folium.Marker(
-                location=[row["entidades.coordenadas.lat"], row["entidades.coordenadas.lon"]],
-                popup=popup,
-                icon=folium.Icon(color="red", icon="info-sign")
-            ).add_to(mapa)
+            map_points.append({
+                "lat": row["entidades.coordenadas.lat"],
+                "lon": row["entidades.coordenadas.lon"],
+                "tipo": "Noticia",
+                "titulo": row["titulo"],
+                "fuente": row["fuente"],
+                "fecha": row["fecha_recogida"],
+                "nivel": row.get("nivel", "N/A"),
+                "razon": row.get("razon", "N/A")
+            })
 
-    st_folium(mapa, width=900, height=500)
+# Mostrar mapa
+if map_points:
+    df_map = pd.DataFrame(map_points)
+    st.map(df_map, latitude="lat", longitude="lon")
+    st.write("📍 Datos de puntos en el mapa:")
+    st.dataframe(df_map)
 else:
-    st.warning("No se encontraron zonas de producción relacionadas con esta variedad.")
+    st.warning("No se encontraron zonas o noticias con coordenadas para esta variedad.")
 
 # ==== Gráfica de distribución temporal ====
 if not df_filtrado.empty:
