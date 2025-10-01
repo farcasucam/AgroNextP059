@@ -89,9 +89,12 @@ df_zonas = flatten_zonas(zonas_raw)
 
 # ==== Preparar variedades ====
 all_variedades = set()
-for lst in df_noticias["variedades_list"].fillna([]):
-    for v in lst:
-        all_variedades.add(v)
+for lst in df_noticias["variedades_list"]:
+    if isinstance(lst, (list, tuple)):
+        for v in lst:
+            all_variedades.add(v)
+    elif isinstance(lst, str) and lst.strip():
+        all_variedades.add(lst.strip())
 
 for v in df_zonas["entidades.variedad"].fillna(""):
     if isinstance(v, str):
