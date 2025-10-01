@@ -135,19 +135,8 @@ else:
         (df_noticias["variedades_list"].apply(lambda L: variedad_sel in L))
     ]
 
-
-# ==== Sidebar ====
-st.sidebar.title("Filtros")
-variedad_sel = st.sidebar.selectbox("Selecciona variedad (individual)", variedades_sorted)
-
-# ==== Filtrar noticias ====
-if variedad_sel == "Todas":
-    df_filtrado = df_noticias.copy()
-else:
-    df_filtrado = df_noticias[df_noticias["variedades_list"].apply(lambda L: variedad_sel in L)]
-
 st.title("📊 Cuadro de mandos agrícola — noticias ↔ zonas")
-st.subheader(f"Variedad seleccionada: {variedad_sel}")
+st.subheader(f"Producto: {producto_sel} | Variedad: {variedad_sel}")
 
 # ==== Tabla de noticias ====
 cand_cols = [
@@ -167,26 +156,20 @@ if not df_filtrado.empty:
     st.write("### Noticias relacionadas")
     st.dataframe(df_show.sort_values(by="fecha_recogida", ascending=False).reset_index(drop=True))
 else:
-    st.info("No hay noticias para esa variedad.")
+    st.info("No hay noticias para esa selección.")
 
 # ==== Cruce con zonas ====
 st.write("### Zonas de producción potencialmente afectadas")
 
-producto = None
-if not df_filtrado.empty and "entidades.producto" in df_filtrado.columns:
-    productos = df_filtrado["entidades.producto"].dropna().unique()
-    producto = productos[0] if len(productos) > 0 else None
-
-if variedad_sel == "Todas":
+if producto_sel == "Todos":
     zonas_rel = df_zonas.copy()
+elif variedad_sel == "Todas":
+    zonas_rel = df_zonas[df_zonas["entidades.producto"] == producto_sel]
 else:
     zonas_rel = df_zonas[
-        (df_zonas["entidades.variedad"].fillna("").str.contains(re.escape(variedad_sel))) |
-        (df_zonas["entidades.producto"].fillna("").str.contains(re.escape(variedad_sel)))
+        (df_zonas["entidades.producto"] == producto_sel) &
+        (df_zonas["entidades.variedad"].fillna("").str.contains(re.escape(variedad_sel)))
     ]
-
-if zonas_rel.empty and producto:
-    zonas_rel = df_zonas[df_zonas["entidades.producto"].fillna("").str.contains(re.escape(producto))]
 
 map_points = []
 for _, z in zonas_rel.iterrows():
@@ -252,4 +235,4 @@ if not df_filtrado.empty:
     else:
         st.info("No hay fechas válidas en las noticias para graficar.")
 else:
-    st.info("Selecciona una variedad con noticias para ver la evolución temporal.")
+    st.info("Selecciona un producto/variedad con noticias para ver la evolución temporal.")
