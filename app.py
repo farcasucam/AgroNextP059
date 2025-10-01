@@ -5,7 +5,7 @@ import json
 import re
 import math
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud
+from wordcloud import WordCloud, STOPWORDS 
 import pydeck as pdk
 
 # ------------------ Configuración ------------------
