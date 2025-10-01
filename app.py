@@ -221,7 +221,7 @@ if not df_filtrado.empty:
         if isinstance(ac, (list, tuple)):
             palabras.extend([str(x) for x in ac if x])
     if palabras:
-        wc = WordCloud(width=1000, height=380, background_color="white", colormap="viridis").generate(" ".join(palabras))
+        wc = WordCloud(width=1000, height=380, background_color="white", colormap="viridis", stopwords=STOPWORDS).generate(" ".join(palabras))
         fig, ax = plt.subplots(figsize=(10,4))
         ax.imshow(wc, interpolation="bilinear")
         ax.axis("off")
