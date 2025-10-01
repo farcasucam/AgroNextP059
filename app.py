@@ -1,15 +1,17 @@
+# app.py
 import streamlit as st
 import pandas as pd
 import json
 import re
+import math
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import pydeck as pdk
 
-# ==== Configuración general ====
-st.set_page_config(layout="wide")
+# ------------------ Configuración ------------------
+st.set_page_config(layout="wide", page_title="Dashboard Agrícola", page_icon="🌱")
 
-# ==== Funciones auxiliares ====
+# ------------------ Helpers ------------------
 @st.cache_data
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -21,6 +23,20 @@ def split_variedades(variedad_raw):
     parts = re.split(r'[\/,;|]+', variedad_raw)
     return [p.strip() for p in parts if p.strip()]
 
+def months_set(start, end):
+    """Devuelve conjunto de meses (1..12) incluidos entre start y end (soporta wrap-around)."""
+    try:
+        s = int(start)
+        e = int(end)
+    except Exception:
+        return set()
+    if s <= e:
+        return set(range(s, e + 1))
+    else:
+        # wrap around year
+        return set(list(range(s, 13)) + list(range(1, e + 1)))
+
+# ------------------ Flatten JSONs ------------------
 def flatten_noticias(noticias_raw):
     rows = []
     for n in noticias_raw:
@@ -28,7 +44,7 @@ def flatten_noticias(noticias_raw):
         coords = ent.get("coordenadas", {}) or {}
         row = {
             "id": n.get("id"),
-            "fecha_noticia": n.get("fecha_noticia"),
+            "fecha_noticia": n.get("fecha_noticia") or n.get("fecha_recogida"),
             "fuente": n.get("fuente"),
             "titulo": n.get("titulo"),
             "resumen": n.get("resumen"),
@@ -70,185 +86,294 @@ def flatten_zonas(zonas_raw):
             })
     return pd.DataFrame(rows)
 
-# ==== Carga datos ====
+# ------------------ Cargar datos ------------------
 noticias_raw = load_json("noticias.json")
 zonas_raw = load_json("zonas.json")
 
 df_noticias = flatten_noticias(noticias_raw)
 df_zonas = flatten_zonas(zonas_raw)
 
-# ==== Sidebar filtros ====
+# ------------------ Header (logos) ------------------
+try:
+    hcol1, hcol2, hcol3 = st.columns([1, 6, 1])
+    with hcol1:
+        st.image("img/logo.png", width=140)
+    with hcol3:
+        st.image("img/ucam.png", width=140)
+    with hcol2:
+        st.markdown("<h1 style='text-align:center;margin-top:18px;'>Cuadro de mandos: Noticias & Zonas de Producción</h1>", unsafe_allow_html=True)
+except Exception:
+    # si falta alguna imagen no falla la app
+    st.title("Cuadro de mandos: Noticias & Zonas de Producción")
+
+# ------------------ Preparar productos y variedades ------------------
 productos_variedades = {}
+
+# desde noticias
 for _, row in df_noticias.iterrows():
     prod = row.get("entidades.producto")
     if not prod:
         continue
-    if prod not in productos_variedades:
-        productos_variedades[prod] = set()
+    productos_variedades.setdefault(prod, set())
     for v in row.get("variedades_list", []):
         productos_variedades[prod].add(v)
 
+# desde zonas
 for _, row in df_zonas.iterrows():
     prod = row.get("entidades.producto")
     var = row.get("entidades.variedad")
     if not prod:
         continue
-    if prod not in productos_variedades:
-        productos_variedades[prod] = set()
+    productos_variedades.setdefault(prod, set())
     if isinstance(var, str):
         for v in re.split(r'[\/,;|]+', var):
             v = v.strip()
             if v:
                 productos_variedades[prod].add(v)
 
+# ------------------ Sidebar filtros ------------------
 st.sidebar.title("Filtros")
 producto_sel = st.sidebar.selectbox("Selecciona producto", ["Todos"] + sorted(productos_variedades.keys()))
 
 if producto_sel == "Todos":
     variedad_sel = "Todas"
 else:
-    variedades = sorted(productos_variedades[producto_sel])
-    variedad_sel = st.sidebar.selectbox("Selecciona variedad", ["Todas"] + variedades)
+    variedades = sorted(productos_variedades.get(producto_sel, []))
+    variedad_sel = st.sidebar.selectbox("Selecciona variedad (opcional)", ["Todas"] + variedades)
 
-# Filtro por mes
 mes_desde = st.sidebar.slider("Mes desde", 1, 12, 1)
 mes_hasta = st.sidebar.slider("Mes hasta", 1, 12, 12)
 
-# ==== Filtrar noticias ====
+# ------------------ Filtrado noticias ------------------
 df_filtrado = df_noticias.copy()
+
 if producto_sel != "Todos":
     df_filtrado = df_filtrado[df_filtrado["entidades.producto"] == producto_sel]
+
 if variedad_sel != "Todas":
     df_filtrado = df_filtrado[df_filtrado["variedades_list"].apply(lambda L: variedad_sel in L)]
 
+# parsear fecha de noticia y filtrar por meses (soporta wrap-around)
 df_filtrado["fecha_parsed"] = pd.to_datetime(df_filtrado["fecha_noticia"], errors="coerce")
-df_filtrado = df_filtrado[df_filtrado["fecha_parsed"].dt.month.between(mes_desde, mes_hasta, inclusive="both")]
+allowed_months = months_set(mes_desde, mes_hasta)
+df_filtrado = df_filtrado[df_filtrado["fecha_parsed"].dt.month.isin(allowed_months)]
 
-# ==== Filtrar zonas ====
+# ------------------ Filtrado zonas por producto/variedad y meses (overlap) ------------------
 df_zonas_filtrado = df_zonas.copy()
 if producto_sel != "Todos":
     df_zonas_filtrado = df_zonas_filtrado[df_zonas_filtrado["entidades.producto"] == producto_sel]
 if variedad_sel != "Todas":
-    df_zonas_filtrado = df_zonas_filtrado[df_zonas_filtrado["entidades.variedad"].fillna("").str.contains(variedad_sel)]
+    df_zonas_filtrado = df_zonas_filtrado[df_zonas_filtrado["entidades.variedad"].fillna("").str.contains(re.escape(variedad_sel))]
 
-df_zonas_filtrado = df_zonas_filtrado[
-    (df_zonas_filtrado["periodo_inicio"] <= mes_hasta) &
-    (df_zonas_filtrado["periodo_fin"] >= mes_desde)
-]
+# comprobar solapamiento de meses
+def zona_overlap(row):
+    try:
+        s = int(row.get("periodo_inicio"))
+        e = int(row.get("periodo_fin"))
+    except Exception:
+        return False
+    return len(months_set(s, e).intersection(allowed_months)) > 0
 
-# ==== Layout principal ====
-st.title("📊 Cuadro de mandos agrícola — noticias y zonas de producción")
+if not df_zonas_filtrado.empty:
+    df_zonas_filtrado = df_zonas_filtrado[df_zonas_filtrado.apply(zona_overlap, axis=1)]
 
-# ---- Noticias en tabla con color por sentimiento ----
+# ------------------ Interfaz principal ------------------
+st.markdown("## Resultados")
+st.write(f"**Producto:** {producto_sel}   ·   **Variedad:** {variedad_sel}   ·   **Meses:** {mes_desde} → {mes_hasta}")
+
+# ------------------ Tabla de noticias (fila coloreada por sentimiento) ------------------
+st.markdown("### 📰 Noticias filtradas")
 if not df_filtrado.empty:
-    st.subheader("📰 Noticias filtradas")
     cols_to_show = ["fecha_noticia", "fuente", "titulo", "entidades.pais", "entidades.region",
                     "entidades.producto", "entidades.variedad", "graduacion_sentimiento"]
     df_show = df_filtrado[cols_to_show].copy().fillna("")
 
-    def sentiment_color(val):
-        if pd.isna(val):
-            return ""
+    def row_style(row):
+        v = row.get("graduacion_sentimiento")
         try:
-            v = float(val)
-            if v > 0.2:
-                return "background-color: rgba(0,200,0,0.2)"  # verde
-            elif v < -0.2:
-                return "background-color: rgba(200,0,0,0.2)"  # rojo
-            else:
-                return "background-color: rgba(200,200,200,0.2)"  # gris
-        except:
-            return ""
+            val = float(v)
+        except Exception:
+            val = None
+        if val is None:
+            color = ""
+        elif val > 0.2:
+            color = "background-color: rgba(0,200,0,0.12)"
+        elif val < -0.2:
+            color = "background-color: rgba(200,0,0,0.12)"
+        else:
+            color = "background-color: rgba(200,200,200,0.12)"
+        return [color] * len(row)
 
-    st.dataframe(
-        df_show.style.applymap(sentiment_color, subset=["graduacion_sentimiento"]),
-        use_container_width=True
-    )
+    styled = df_show.style.apply(row_style, axis=1)
+    st.dataframe(styled, use_container_width=True)
 else:
     st.info("No hay noticias para la selección actual.")
 
-# ---- Nube de palabras única ----
+# ------------------ Nube de palabras única ------------------
+st.markdown("### ☁️ Nube de palabras (palabras clave + actores)")
 if not df_filtrado.empty:
-    st.subheader("☁️ Nube de palabras (palabras clave + actores)")
     palabras = []
     for _, row in df_filtrado.iterrows():
-        if isinstance(row["palabras_clave"], list):
-            palabras.extend(row["palabras_clave"])
-        if isinstance(row["actores"], list):
-            palabras.extend(row["actores"])
-
+        pk = row.get("palabras_clave")
+        ac = row.get("actores")
+        if isinstance(pk, (list, tuple)):
+            palabras.extend([str(x) for x in pk if x])
+        if isinstance(ac, (list, tuple)):
+            palabras.extend([str(x) for x in ac if x])
     if palabras:
-        wc = WordCloud(width=800, height=400, background_color="white", colormap="viridis").generate(" ".join(palabras))
-        fig, ax = plt.subplots(figsize=(8,4))
+        wc = WordCloud(width=1000, height=380, background_color="white", colormap="viridis").generate(" ".join(palabras))
+        fig, ax = plt.subplots(figsize=(10,4))
         ax.imshow(wc, interpolation="bilinear")
         ax.axis("off")
         st.pyplot(fig)
+    else:
+        st.info("No hay palabras clave/actores disponibles para generar la nube.")
+else:
+    st.info("No hay datos para generar la nube.")
 
-# ---- Mapa ----
-st.subheader("🗺️ Zonas de producción y noticias")
+# ------------------ Preparar datos para el mapa (con nombres sencillos para tooltip) ------------------
+# Zonas
+zones_for_map = []
+if not df_zonas_filtrado.empty:
+    zdf = df_zonas_filtrado.dropna(subset=["lat", "lon"]).copy()
+    if not zdf.empty:
+        # normalizar radios: usar escala sqrt para que no se hagan gigantes
+        max_vol = zdf["volumen_estimado_tn"].max() or 1
+        # radius = sqrt(volume/max_vol) * base_scale
+        base_scale = 200000  # ajustable
+        zdf["radius"] = (zdf["volumen_estimado_tn"].apply(lambda v: math.sqrt(max(v, 0)))) / math.sqrt(max_vol) * base_scale + 20000
+        for _, r in zdf.iterrows():
+            zones_for_map.append({
+                "lat": float(r["lat"]),
+                "lon": float(r["lon"]),
+                "type": "Zona",
+                "title": "",
+                "product": r.get("entidades.producto", ""),
+                "variety": r.get("entidades.variedad", ""),
+                "region": r.get("region", ""),
+                "country": r.get("pais", ""),
+                "volume": int(r.get("volumen_estimado_tn")) if pd.notna(r.get("volumen_estimado_tn")) else "",
+                "source": "",
+                "date": f"{int(r.get('periodo_inicio')) if pd.notna(r.get('periodo_inicio')) else ''}-{int(r.get('periodo_fin')) if pd.notna(r.get('periodo_fin')) else ''}",
+                "sentiment": "",
+                "radius": float(r["radius"])
+            })
 
-map_layers = []
+# Noticias
+news_for_map = []
+if not df_filtrado.empty:
+    ndf = df_filtrado.dropna(subset=["lat", "lon"]).copy()
+    if not ndf.empty:
+        # radius fixed but modest
+        news_radius = 30000
+        for _, r in ndf.iterrows():
+            date_str = ""
+            if pd.notna(r.get("fecha_parsed")):
+                date_str = r["fecha_parsed"].strftime("%Y-%m-%d")
+            news_for_map.append({
+                "lat": float(r["lat"]),
+                "lon": float(r["lon"]),
+                "type": "Noticia",
+                "title": r.get("titulo", ""),
+                "product": r.get("entidades.producto", ""),
+                "variety": (r.get("variedades_list") and ", ".join(r.get("variedades_list"))) or r.get("entidades.variedad", ""),
+                "region": r.get("entidades.region", ""),
+                "country": r.get("entidades.pais", ""),
+                "volume": "",
+                "source": r.get("fuente", ""),
+                "date": date_str,
+                "sentiment": (str(r.get("graduacion_sentimiento")) if pd.notna(r.get("graduacion_sentimiento")) else ""),
+                "radius": news_radius
+            })
+
+# ------------------ Mapa: capas y tooltip ------------------
+st.markdown("### 🗺️ Zonas de producción y noticias")
+
+map_data_z = pd.DataFrame(zones_for_map) if zones_for_map else pd.DataFrame(columns=[
+    "lat","lon","type","title","product","variety","region","country","volume","source","date","sentiment","radius"
+])
+map_data_n = pd.DataFrame(news_for_map) if news_for_map else pd.DataFrame(columns=map_data_z.columns)
+
+layers = []
 all_points = []
 
-# Zonas (círculos verdes)
-if not df_zonas_filtrado.empty:
-    df_zonas_filtrado = df_zonas_filtrado.dropna(subset=["lat", "lon", "volumen_estimado_tn"])
-    if not df_zonas_filtrado.empty:
-        max_vol = df_zonas_filtrado["volumen_estimado_tn"].max() or 1
-        df_zonas_filtrado["radius_scaled"] = df_zonas_filtrado["volumen_estimado_tn"] / max_vol * 200000
-        zonas_layer = pdk.Layer(
+if not map_data_z.empty:
+    layers.append(
+        pdk.Layer(
             "ScatterplotLayer",
-            data=df_zonas_filtrado,
+            data=map_data_z,
             get_position=["lon","lat"],
-            get_radius="radius_scaled",
+            get_radius="radius",
+            radius_scale=1,
             get_fill_color=[0, 128, 0, 160],
             pickable=True,
         )
-        map_layers.append(zonas_layer)
-        all_points.extend(df_zonas_filtrado[["lat","lon"]].values.tolist())
+    )
+    all_points.extend(map_data_z[["lat","lon"]].values.tolist())
 
-# Noticias (círculos rojos)
-if not df_filtrado.empty:
-    df_news_map = df_filtrado.dropna(subset=["lat", "lon"])
-    if not df_news_map.empty:
-        df_news_map["radius_scaled"] = 60000
-        news_layer = pdk.Layer(
+if not map_data_n.empty:
+    layers.append(
+        pdk.Layer(
             "ScatterplotLayer",
-            data=df_news_map,
+            data=map_data_n,
             get_position=["lon","lat"],
-            get_radius="radius_scaled",
+            get_radius="radius",
+            radius_scale=1,
             get_fill_color=[200, 0, 0, 160],
             pickable=True,
         )
-        map_layers.append(news_layer)
-        all_points.extend(df_news_map[["lat","lon"]].values.tolist())
+    )
+    all_points.extend(map_data_n[["lat","lon"]].values.tolist())
 
-# Calcular centro del mapa y zoom dinámico
-if all_points:
+if layers and all_points:
     lats, lons = zip(*all_points)
-    center_lat = sum(lats)/len(lats)
-    center_lon = sum(lons)/len(lons)
-    view_state = pdk.ViewState(latitude=center_lat, longitude=center_lon, zoom=2.5)
+    center_lat = sum(lats) / len(lats)
+    center_lon = sum(lons) / len(lons)
+    # heurística de zoom basada en la extensión máxima
+    lat_min, lat_max = min(lats), max(lats)
+    lon_min, lon_max = min(lons), max(lons)
+    span = max(abs(lat_max - lat_min), abs(lon_max - lon_min))
+    if span < 0.5:
+        zoom = 8
+    elif span < 2:
+        zoom = 7
+    elif span < 5:
+        zoom = 6
+    elif span < 10:
+        zoom = 5
+    elif span < 30:
+        zoom = 4
+    else:
+        zoom = 2
+
+    view_state = pdk.ViewState(latitude=center_lat, longitude=center_lon, zoom=zoom, pitch=0)
 
     tooltip = {
-        "html": "<b>{region}, {pais}</b><br/>Producto: {entidades.producto}<br/>Variedad: {entidades.variedad}<br/>Volumen: {volumen_estimado_tn} tn<br/><b>{titulo}</b><br/>{fuente} - {fecha_noticia}",
+        "html": (
+            "<b>{type}</b><br/>"
+            "<b>Título:</b> {title}<br/>"
+            "<b>Producto:</b> {product}  <b>Variedad:</b> {variety}<br/>"
+            "<b>Región:</b> {region}, {country}<br/>"
+            "<b>Volumen (tn):</b> {volume}<br/>"
+            "<b>Fuente:</b> {source}<br/>"
+            "<b>Fecha:</b> {date}<br/>"
+            "<b>Sentimiento:</b> {sentiment}"
+        ),
         "style": {"backgroundColor": "white", "color": "black"}
     }
 
-    st.pydeck_chart(pdk.Deck(layers=map_layers, initial_view_state=view_state, map_style="light", tooltip=tooltip))
+    deck = pdk.Deck(layers=layers, initial_view_state=view_state, map_style="light", tooltip=tooltip)
+    st.pydeck_chart(deck, use_container_width=True)
 else:
-    st.info("No hay datos geográficos para mostrar.")
+    st.info("No hay datos geográficos que mostrar para los filtros actuales.")
 
-# ---- Footer con logo ----
+# ------------------ Footer (logos) ------------------
 st.markdown("---")
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <a href="https://www.agroalnext.es/" target="_blank">
-            <img src="https://www.agroalnext.es/wp-content/uploads/2023/06/Agroalnext-Logo.png" 
-                 alt="Agroalnext" height="80">
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+try:
+    fcol1, fcol2 = st.columns(2)
+    with fcol1:
+        st.image("img/murcia.png", width=200)
+    with fcol2:
+        st.image("img/logos-gob.jpg", width=200)
+except Exception:
+    st.markdown("Logos de pie no disponibles (falta la carpeta `img/` o las imágenes).")
