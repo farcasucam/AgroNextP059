@@ -4,6 +4,7 @@ import pandas as pd
 import json
 import re
 
+# ==== Funciones auxiliares ====
 @st.cache_data
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -36,7 +37,7 @@ def flatten_noticias(noticias_raw):
             "entidades.region": ent.get("region"),
             "entidades.producto": ent.get("producto"),
             "entidades.variedad": ent.get("variedad"),
-            # coordenadas (intentar varias rutas)
+            # coordenadas
             "lat": coords.get("lat"),
             "lon": coords.get("lon"),
             # campos adicionales
@@ -47,10 +48,9 @@ def flatten_noticias(noticias_raw):
             "condiciones_mercado": n.get("condiciones_mercado"),
             "datos_produccion": n.get("datos_produccion"),
         }
-        # Compatibilidad: crear alias 'nivel' y 'razon' si código espera esos campos
+        # Compatibilidad
         row["nivel"] = row["impacto_produccion"]
         row["razon"] = row["resumen"]
-        # lista de variedades individuales
         row["variedades_list"] = split_variedades(row["entidades.variedad"])
         rows.append(row)
     return pd.DataFrame(rows)
@@ -80,19 +80,19 @@ def flatten_zonas(zonas_raw):
             })
     return pd.DataFrame(rows)
 
-# ---- Carga datos ----
+# ==== Carga datos ====
 noticias_raw = load_json("noticias.json")
 zonas_raw = load_json("zonas.json")
 
 df_noticias = flatten_noticias(noticias_raw)
 df_zonas = flatten_zonas(zonas_raw)
 
-# Generar lista de variedades únicas (explosión)
+# ==== Preparar variedades ====
 all_variedades = set()
 for lst in df_noticias["variedades_list"].fillna([]):
     for v in lst:
         all_variedades.add(v)
-# Añadir también las variedades que vienen en zonas.json (meta)
+
 for v in df_zonas["entidades.variedad"].fillna(""):
     if isinstance(v, str):
         for s in re.split(r'[\/,;|]+', v):
@@ -101,52 +101,49 @@ for v in df_zonas["entidades.variedad"].fillna(""):
                 all_variedades.add(s)
 
 variedades_sorted = sorted([v for v in all_variedades if v])
-variedades_sorted.insert(0, "Todas")  # opción para ver todo
+variedades_sorted.insert(0, "Todas")
 
+# ==== Sidebar ====
 st.sidebar.title("Filtros")
 variedad_sel = st.sidebar.selectbox("Selecciona variedad (individual)", variedades_sorted)
 
-# Filtrado de noticias por variedad seleccionada
+# ==== Filtrar noticias ====
 if variedad_sel == "Todas":
     df_filtrado = df_noticias.copy()
 else:
-    # Filtrar por lista de variedades
     df_filtrado = df_noticias[df_noticias["variedades_list"].apply(lambda L: variedad_sel in L)]
 
 st.title("📊 Cuadro de mandos agrícola — noticias ↔ zonas")
 st.subheader(f"Variedad seleccionada: {variedad_sel}")
 
-# Tabla de noticias (selección segura de columnas)
+# ==== Tabla de noticias ====
 cand_cols = [
     "fecha_recogida", "fecha_noticia", "fuente", "titulo",
     "entidades.pais", "entidades.region", "entidades.producto", "entidades.variedad",
     "nivel", "razon", "impacto_produccion", "resumen", "graduacion_sentimiento",
     "palabras_clave", "actores", "url", "categoria", "idioma"
 ]
-display_cols = [c for c in cand_cols if c in df_filtrado.columns]
+
 if not df_filtrado.empty:
-    # Formatear columnas complejas para visualización
-    df_show = df_filtrado[display_cols].copy()
-    # Convertir listas a string para la tabla
+    df_show = df_filtrado.reindex(columns=cand_cols, fill_value="").copy()
     for col in ["palabras_clave", "actores"]:
         if col in df_show.columns:
-            df_show[col] = df_show[col].apply(lambda x: ", ".join(x) if isinstance(x, (list, tuple)) else x)
+            df_show[col] = df_show[col].apply(
+                lambda x: ", ".join(map(str, x)) if isinstance(x, (list, tuple)) else (str(x) if x else "")
+            )
     st.write("### Noticias relacionadas")
     st.dataframe(df_show.sort_values(by="fecha_recogida", ascending=False).reset_index(drop=True))
 else:
     st.info("No hay noticias para esa variedad.")
 
-# ---- Cruce con zonas de producción ----
+# ==== Cruce con zonas ====
 st.write("### Zonas de producción potencialmente afectadas")
 
-# Buscar zonas que correspondan a la variedad o al producto
-# Para producto, tomaremos el primer producto de las noticias filtradas (si existe)
 producto = None
 if not df_filtrado.empty and "entidades.producto" in df_filtrado.columns:
-    producto = df_filtrado["entidades.producto"].dropna().unique()
-    producto = producto[0] if len(producto) > 0 else None
+    productos = df_filtrado["entidades.producto"].dropna().unique()
+    producto = productos[0] if len(productos) > 0 else None
 
-# Zonas que tengan la variedad explícita o el mismo producto
 if variedad_sel == "Todas":
     zonas_rel = df_zonas.copy()
 else:
@@ -155,13 +152,10 @@ else:
         (df_zonas["entidades.producto"].fillna("").str.contains(re.escape(variedad_sel)))
     ]
 
-# Si no encontramos por variedad, intentar por producto
 if zonas_rel.empty and producto:
     zonas_rel = df_zonas[df_zonas["entidades.producto"].fillna("").str.contains(re.escape(producto))]
 
-# Preparamos puntos para el mapa (zonas + noticias)
 map_points = []
-# Zonas
 for _, z in zonas_rel.iterrows():
     try:
         lat = float(z["lat"]) if pd.notna(z["lat"]) else None
@@ -182,7 +176,6 @@ for _, z in zonas_rel.iterrows():
         "volumen_tn": z.get("volumen_estimado_tn")
     })
 
-# Noticias
 for _, n in df_filtrado.iterrows():
     try:
         lat = float(n["lat"]) if pd.notna(n["lat"]) else None
@@ -204,28 +197,23 @@ for _, n in df_filtrado.iterrows():
 
 if map_points:
     df_map = pd.DataFrame(map_points)
-    # st.map espera columnas lat/lon o latitude/longitude (se aceptan lat/lon)
-    st.map(df_map.rename(columns={"lat": "lat", "lon": "lon"})[["lat", "lon"]])
+    st.map(df_map[["lat", "lon"]])
     st.write("📍 Puntos (zonas y noticias) — detalles:")
     st.dataframe(df_map)
 else:
-    st.warning("No se encontraron puntos con coordenadas (zonas o noticias) para la selección actual.")
+    st.warning("No se encontraron puntos con coordenadas para la selección actual.")
 
-# ---- Gráfica temporal (noticias por mes) ----
+# ==== Gráfica temporal ====
 st.write("### Evolución temporal de noticias")
 if not df_filtrado.empty:
     df_dates = df_filtrado.copy()
-    # Intentar parsear fechas desde fecha_recogida / fecha_noticia
-    if "fecha_recogida" in df_dates.columns:
-        df_dates["fecha_parsed"] = pd.to_datetime(df_dates["fecha_recogida"], errors="coerce")
-    elif "fecha_noticia" in df_dates.columns:
-        df_dates["fecha_parsed"] = pd.to_datetime(df_dates["fecha_noticia"], errors="coerce")
-    else:
-        df_dates["fecha_parsed"] = pd.NaT
+    df_dates["fecha_parsed"] = pd.NaT
+    for col in ["fecha_recogida", "fecha_noticia"]:
+        if col in df_dates.columns:
+            df_dates["fecha_parsed"] = pd.to_datetime(df_dates[col], errors="coerce").fillna(df_dates["fecha_parsed"])
     df_dates = df_dates.dropna(subset=["fecha_parsed"])
     if not df_dates.empty:
         counts = df_dates.groupby(df_dates["fecha_parsed"].dt.to_period("M")).size()
-        # convertir a serie con índice datetime para st.bar_chart
         counts.index = counts.index.to_timestamp()
         st.bar_chart(counts)
     else:
